@@ -3287,7 +3287,9 @@
               "right": false,
               "top": true,
               "bottom": false
-            }
+            },
+            "vCenter": false,
+            "hCenter": false
           }
         }
       },
@@ -3325,17 +3327,17 @@
           "type": "WIDGET",
           "widgetId": "widget_154",
           "bbox": {
-            "left": "38.9%",
-            "right": "39.0%",
-            "top": "93.5%",
-            "bottom": "1.8%",
-            "width": "22.1%",
+            "left": "16.2%",
+            "right": "-0.0%",
+            "top": "89.6%",
+            "bottom": "5.7%",
+            "width": "83.8%",
             "height": "4.7%"
           },
           "setting": {
             "autoProps": {
-              "left": false,
-              "right": true,
+              "left": true,
+              "right": false,
               "top": true,
               "bottom": false
             },
@@ -3388,6 +3390,12 @@
           "widgetId": "widget_270",
           "bbox": {},
           "setting": {}
+        },
+        "13": {
+          "type": "WIDGET",
+          "widgetId": "widget_291",
+          "bbox": {},
+          "setting": {}
         }
       },
       "type": "FIXED",
@@ -3398,7 +3406,8 @@
         "6",
         "9",
         "10",
-        "11"
+        "11",
+        "13"
       ]
     },
     "layout_58": {
@@ -12295,8 +12304,8 @@
           "space": 0,
           "advanced": true,
           "card": {
-            "showLabel": false,
-            "labelGrowth": 0,
+            "showLabel": true,
+            "labelGrowth": 20,
             "avatar": {
               "type": "primary",
               "size": "default",
@@ -12305,7 +12314,8 @@
             "variant": {
               "default": {
                 "iconColor": "var(--dark)",
-                "bg": "var(--light)"
+                "bg": "#b54900",
+                "color": "var(--light)"
               },
               "active": {
                 "iconColor": "var(--light)",
@@ -12315,7 +12325,8 @@
                 "iconColor": "var(--light)",
                 "bg": "var(--primary)"
               }
-            }
+            },
+            "showTooltip": false
           }
         }
       },
@@ -24255,6 +24266,45 @@
       "useMapWidgetIds": [
         "widget_1"
       ]
+    },
+    "widget_291": {
+      "uri": "widgets/fire-cone/",
+      "version": "0.1.0",
+      "label": "Fire Threat Cone",
+      "config": {
+        "maxHours": 24,
+        "isochroneHours": [
+          1,
+          3,
+          6,
+          12,
+          24
+        ],
+        "maxRadiusKm": 30,
+        "bearings": 24,
+        "stepM": 500,
+        "assetLayers": [
+          {
+            "url": "https://services6.arcgis.com/Ji79lWGR5B33LhY7/arcgis/rest/services/BNSF_Tunnels_with_Wildfire_Strategy/FeatureServer/0",
+            "nameField": "Tunnel_Name",
+            "extraFields": [
+              "Subdivision",
+              "Milepost",
+              "Overall_Risk_Classification"
+            ]
+          },
+          {
+            "url": "https://services6.arcgis.com/Ji79lWGR5B33LhY7/arcgis/rest/services/BNSF_Infrastructure_with_Wildfire_Strategy/FeatureServer/1",
+            "nameField": "Descriptio",
+            "extraFields": [
+              "Subdivisio",
+              "Milepost",
+              "Overall__1"
+            ]
+          }
+        ]
+      },
+      "id": "widget_291"
     }
   },
   "widgetsManifest": {},
@@ -29706,7 +29756,7 @@
       "page_10": []
     }
   ],
-  "timestamp": 1783394162508,
+  "timestamp": 1783484181774,
   "customTheme": {},
   "header": {
     "layout": {
