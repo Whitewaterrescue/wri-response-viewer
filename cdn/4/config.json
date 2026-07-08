@@ -24304,7 +24304,10 @@
           }
         ]
       },
-      "id": "widget_291"
+      "id": "widget_291",
+      "useMapWidgetIds": [
+        "widget_1"
+      ]
     }
   },
   "widgetsManifest": {},
