@@ -218,6 +218,28 @@
             "vCenter": false,
             "hCenter": false
           }
+        },
+        "6": {
+          "type": "WIDGET",
+          "widgetId": "widget_293",
+          "bbox": {
+            "left": "54.2%",
+            "right": "38.1%",
+            "top": "91.9%",
+            "bottom": "4.0%",
+            "width": "7.7%",
+            "height": "4.1%"
+          },
+          "setting": {
+            "autoProps": {
+              "right": true,
+              "left": false,
+              "top": true,
+              "bottom": false
+            },
+            "vCenter": false,
+            "hCenter": false
+          }
         }
       },
       "type": "FIXED",
@@ -225,7 +247,8 @@
       "order": [
         "1",
         "4",
-        "5"
+        "5",
+        "6"
       ]
     },
     "layout_6": {
@@ -295,6 +318,10 @@
           "widgetId": "widget_290",
           "bbox": {},
           "setting": {}
+        },
+        "21": {
+          "type": "WIDGET",
+          "widgetId": "widget_292"
         }
       },
       "type": "FIXED",
@@ -310,7 +337,8 @@
         "16",
         "17",
         "19",
-        "20"
+        "20",
+        "21"
       ]
     },
     "layout_7": {
@@ -7720,6 +7748,10 @@
             "widget_288": {
               "width": 436,
               "height": 436
+            },
+            "widget_292": {
+              "width": 1200,
+              "height": 800
             }
           },
           "arrangement": "floating"
@@ -24308,6 +24340,65 @@
       "useMapWidgetIds": [
         "widget_152"
       ]
+    },
+    "widget_292": {
+      "uri": "widgets/common/embed/",
+      "version": "1.20.0",
+      "label": "Sit Stat",
+      "config": {
+        "embedType": "url",
+        "expression": "<p>https://script.google.com/macros/s/AKfycbzsxpfqbV7di4yTHRiTr7bg-RwojLuesrLhPoaFVM8foedbzhxMMyC-lPcBPPyLtjtm/exec?role=sitstat</p>",
+        "enableLabel": false
+      },
+      "id": "widget_292",
+      "useDataSources": []
+    },
+    "widget_293": {
+      "uri": "widgets/common/button/",
+      "version": "1.20.0",
+      "label": "Resource Manager",
+      "config": {
+        "functionConfig": {
+          "text": "Resource Manager",
+          "textExpression": null,
+          "linkParam": {
+            "linkType": "WEB_ADDRESS",
+            "openType": "_blank",
+            "value": "https://script.google.com/macros/s/AKfycbzsxpfqbV7di4yTHRiTr7bg-RwojLuesrLhPoaFVM8foedbzhxMMyC-lPcBPPyLtjtm/exec?role=wri_icp",
+            "expression": null
+          }
+        },
+        "styleConfig": {
+          "themeStyle": {
+            "quickStyleType": "danger"
+          },
+          "useCustom": true,
+          "customStyle": {
+            "hover": {
+              "enableDynamicStyle": false,
+              "text": {
+                "color": "#c85716"
+              },
+              "background": {
+                "color": "#050505",
+                "fillType": "fill"
+              }
+            },
+            "regular": {
+              "enableDynamicStyle": false,
+              "text": {
+                "color": "var(--dark)"
+              },
+              "background": {
+                "color": "#c85716",
+                "fillType": "fill"
+              }
+            }
+          }
+        }
+      },
+      "id": "widget_293",
+      "useDataSources": []
     }
   },
   "widgetsManifest": {},
@@ -29731,8 +29822,8 @@
     "dataSource_23": {
       "id": "dataSource_23",
       "type": "WEB_MAP",
-      "sourceLabel": "BNSF Drills and Responses View Map",
-      "itemId": "5e30a96b8bcc4d6f981ce7b7435c61c0",
+      "sourceLabel": "BNSF Drills and Responses 2607missouri",
+      "itemId": "0df4387f8b7145659b96e7ed3df81880",
       "portalUrl": "https://WRIEnviro.maps.arcgis.com"
     }
   },
