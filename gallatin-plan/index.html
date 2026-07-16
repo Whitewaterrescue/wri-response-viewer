@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallatin Corridor Deployment Plan</title>
+<style>
+  :root {
+    --bg: #181a1d; --panel: #22252a; --panel2: #2a2e34; --line: #3a3f47;
+    --text: #e8eaed; --dim: #9aa0a8; --accent: #4fc3f7;
+    --go1: #34c759; --go2: #30b0c7; --notify: #ff453a; --trib: #ffb340; --later: #6e767f;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 14px/1.45 "Segoe UI", system-ui, sans-serif; }
+  header { padding: 14px 16px 10px; border-bottom: 1px solid var(--line); }
+  header h1 { margin: 0 0 4px; font-size: 17px; font-weight: 600; }
+  header .sub { color: var(--dim); font-size: 12px; }
+  .stale { background: #4a3a12; color: #ffd60a; padding: 6px 10px; border-radius: 6px;
+           font-size: 12px; margin-top: 8px; display: none; }
+  main { padding: 12px 16px 40px; max-width: 900px; }
+  h2 { font-size: 14px; text-transform: uppercase; letter-spacing: .06em;
+       color: var(--accent); margin: 22px 0 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .scroll { overflow-x: auto; }
+  th { text-align: left; color: var(--dim); font-weight: 600; padding: 6px 8px;
+       border-bottom: 1px solid var(--line); white-space: nowrap; }
+  td { padding: 7px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tr:last-child td { border-bottom: none; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px;
+           font-weight: 700; white-space: nowrap; color: #0b0d0f; }
+  .b-go1 { background: var(--go1); } .b-go2 { background: var(--go2); }
+  .b-notify { background: var(--notify); color: #fff; }
+  .b-trib { background: var(--trib); } .b-later { background: var(--later); color: #fff; }
+  .b-stage { background: #8e8e93; color: #fff; }
+  .seg { background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+         margin: 10px 0; overflow: hidden; }
+  .seg > summary { cursor: pointer; padding: 10px 12px; display: flex; flex-wrap: wrap;
+                   gap: 8px 14px; align-items: baseline; list-style: none; }
+  .seg > summary::-webkit-details-marker { display: none; }
+  .seg[open] > summary { border-bottom: 1px solid var(--line); }
+  .seg summary .sid { font-weight: 700; font-size: 15px; }
+  .seg summary .water { color: var(--accent); }
+  .seg summary .mp, .seg summary .primary-hint { color: var(--dim); font-size: 12px; }
+  .hours { padding: 8px 12px 2px; color: var(--dim); font-size: 12px; }
+  .hours span { background: var(--panel2); border-radius: 6px; padding: 2px 7px;
+                margin-right: 6px; display: inline-block; margin-bottom: 4px; }
+  .score { font-weight: 700; }
+  .s5 { color: var(--go1); } .s4 { color: #7ed957; } .s3 { color: var(--trib); }
+  .s2 { color: #ff8a5c; } .s1 { color: var(--notify); } .sd { color: var(--dim); }
+  .notes { color: var(--dim); font-size: 12px; }
+  .eta { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowrap; }
+  .cav { color: var(--dim); font-size: 12px; }
+  .cav li { margin-bottom: 4px; }
+  #err { color: var(--notify); padding: 20px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Gallatin Corridor — Team Deployment Plan</h1>
+  <div class="sub" id="meta">loading…</div>
+  <div class="stale" id="stale"></div>
+</header>
+<main>
+  <div id="err" style="display:none"></div>
+  <h2>Deployment summary (first 5 hours)</h2>
+  <div class="scroll"><table id="summary">
+    <thead><tr><th>Seg</th><th>Spill into</th><th>GO-1 primary</th><th>GO-2 backup</th>
+    <th>Notify-only</th><th>Tributary (immediate)</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+  <h2>Segment detail</h2>
+  <div id="segs"></div>
+  <h2>Caveats</h2>
+  <ul class="cav" id="cavs"></ul>
+</main>
+<script>
+const $ = (s, el) => (el || document).querySelector(s);
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function scoreHtml(r) {
+  if (r.score == null && !r.q) return '<span class="sd">—</span>';
+  const v = r.score != null ? r.score : r.q;
+  const der = r.q_derived ? "†" : "";
+  return `<span class="score s${v}">${v}${der}</span>`;
+}
+const BADGE = (a) => {
+  if (!a) return "";
+  if (a.startsWith("GO-1")) return '<span class="badge b-go1">GO-1</span>';
+  if (a.startsWith("GO-2")) return '<span class="badge b-go2">GO-2</span>';
+  if (a.startsWith("STAGE")) return '<span class="badge b-stage">STAGE</span>';
+  if (a.startsWith("NOTIFY")) return '<span class="badge b-notify">NOTIFY</span>';
+  if (a.startsWith("TRIB")) return '<span class="badge b-trib">TRIB</span>';
+  if (a.startsWith("LATER")) return '<span class="badge b-later">&gt;5 h</span>';
+  return "";
+};
+
+fetch("corridor_plan.json?v=" + Date.now()).then(r => {
+  if (!r.ok) throw new Error("corridor_plan.json HTTP " + r.status);
+  return r.json();
+}).then(plan => {
+  $("#meta").textContent =
+    `Generated ${plan.generated_utc} · trace-engine v${plan.engine} · live flows at run time · ` +
+    `${plan.lead_min}-min lead time · ${plan.focus_hr}-h window · † = quality from GRP rank (no recon)`;
+  const ageDays = (Date.now() - Date.parse(plan.generated_utc.replace(" UTC", "Z").replace(" ", "T"))) / 864e5;
+  if (isFinite(ageDays) && ageDays > 14) {
+    const el = $("#stale");
+    el.style.display = "block";
+    el.textContent = `⚠ Travel times are ${Math.round(ageDays)} days old — flows have changed. ` +
+                     `Rerun the corridor analysis for current conditions.`;
+  }
+
+  const sumBody = $("#summary tbody");
+  const segsDiv = $("#segs");
+  for (const s of plan.segments) {
+    const rows = s.sites || [];
+    const pick = (pfx) => rows.filter(r => (r.action || "").startsWith(pfx));
+    const go1 = pick("GO-1")[0], go2 = pick("GO-2")[0];
+    const notify = pick("NOTIFY"), trib = pick("TRIB"), later = pick("LATER"), stage = pick("STAGE");
+    const cell = (r) => r ? `<b>${esc(r.name)}</b> <span class="eta">${r.eta}</span> ${scoreHtml(r)}` : "—";
+    const listCell = (a) => a.length ? a.map(r => `${esc(r.name)} <span class="eta">${r.eta}</span>`).join("<br>") : "—";
+    sumBody.insertAdjacentHTML("beforeend",
+      `<tr><td><b>${s.id}</b><div class="notes">MP ${s.mp_start_mi}–${s.mp_end_mi}</div></td>` +
+      `<td>${esc(s.waterway)}</td><td>${cell(go1)}</td><td>${cell(go2)}</td>` +
+      `<td>${listCell(notify)}</td><td>${listCell(trib)}</td></tr>`);
+
+    const hours = (s.hourly || []).filter(h => h.hour <= 5)
+      .map(h => `<span>${h.hour} h → ${h.cum_dist_km.toFixed(1)} km</span>`).join("");
+    const gauges = (s.gauges || []).map(g => `${esc(g.name)} ${Math.round(g.discharge_cfs)} cfs`).join(" · ");
+    let detail;
+    if (!rows.length) {
+      detail = `<div class="hours">No GRP strategies or recon sites within reach of this trace in 12 h.</div>`;
+    } else {
+      detail = `<div class="scroll"><table><thead><tr><th></th><th>ETA</th><th>Site</th>` +
+        `<th>Stream</th><th>Score</th><th>GRP</th><th>Notes</th></tr></thead><tbody>` +
+        rows.map(r =>
+          `<tr><td>${BADGE(r.action)}</td><td class="eta">${r.eta}</td>` +
+          `<td>${esc(r.name)}${r.src === "Recon-new" ? ' <span class="notes">(new site — not in GRP)</span>' : ""}</td>` +
+          `<td class="notes">${esc(r.stream)}${r.main_stem ? "" : " (trib)"}</td>` +
+          `<td>${scoreHtml(r)}</td><td class="notes">${esc(r.grp_rank || "—")}</td>` +
+          `<td class="notes">${esc((r.notes || "").slice(0, 140))}</td></tr>`).join("") +
+        `</tbody></table></div>`;
+    }
+    const hint = go1 ? `primary: ${go1.name}` : "no deployable main-stem site in 5 h";
+    segsDiv.insertAdjacentHTML("beforeend",
+      `<details class="seg"${s.id === "S4" ? " open" : ""}><summary>` +
+      `<span class="sid">${s.id}</span><span class="mp">MP ${s.mp_start_mi}–${s.mp_end_mi}</span>` +
+      `<span class="water">${esc(s.waterway)}</span><span class="primary-hint">${esc(hint)}</span></summary>` +
+      `<div class="hours">Leading edge: ${hours || "n/a"}${gauges ? ` &nbsp;·&nbsp; ${gauges}` : ""}</div>` +
+      detail + `</details>`);
+  }
+
+  const cavs = $("#cavs");
+  cavs.insertAdjacentHTML("beforeend",
+    `<li>Spill points are worst-case (track closest to water) per 5-mile segment; ETAs start when product reaches the water.</li>` +
+    `<li>Times reflect flows on the run date — spring runoff compresses them 3–5×.</li>`);
+  if ((plan.unjoined_grp || []).length)
+    cavs.insertAdjacentHTML("beforeend",
+      `<li>${plan.unjoined_grp.length} corridor GRP sites not reached by any modeled trace within 12 h: ` +
+      `${esc(plan.unjoined_grp.slice(0, 10).join(", "))}${plan.unjoined_grp.length > 10 ? "…" : ""}</li>`);
+  for (const u of plan.unparsed_recon || [])
+    cavs.insertAdjacentHTML("beforeend",
+      `<li>Recon OID ${u.oid} has no parseable 1–5 score: “${esc(u.desc.slice(0, 80))}”</li>`);
+}).catch(e => {
+  const el = $("#err");
+  el.style.display = "block";
+  el.textContent = "Failed to load corridor plan: " + e.message;
+});
+</script>
+</body>
+</html>
