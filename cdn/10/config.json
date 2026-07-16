@@ -322,6 +322,10 @@
         "21": {
           "type": "WIDGET",
           "widgetId": "widget_292"
+        },
+        "22": {
+          "type": "WIDGET",
+          "widgetId": "widget_294"
         }
       },
       "type": "FIXED",
@@ -338,7 +342,8 @@
         "17",
         "19",
         "20",
-        "21"
+        "21",
+        "22"
       ]
     },
     "layout_7": {
@@ -24398,6 +24403,18 @@
         }
       },
       "id": "widget_293",
+      "useDataSources": []
+    },
+    "widget_294": {
+      "uri": "widgets/common/embed/",
+      "version": "1.20.0",
+      "label": "Gallatin Corridor Plan",
+      "config": {
+        "embedType": "url",
+        "expression": "<p>https://whitewaterrescue.github.io/wri-response-viewer/gallatin-plan/</p>",
+        "enableLabel": false
+      },
+      "id": "widget_294",
       "useDataSources": []
     }
   },
