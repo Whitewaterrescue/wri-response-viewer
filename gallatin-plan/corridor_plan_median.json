@@ -1,0 +1,1544 @@
+{
+ "generated_utc": "2026-07-17 16:42 UTC",
+ "engine": "1.5.0",
+ "scenario": "median-p50",
+ "flow_label": "seasonal MEDIAN flows (period-of-record p50 for this date)",
+ "lead_min": 120,
+ "focus_hr": 5.0,
+ "segments": [
+  {
+   "id": "S1",
+   "mp_start_mi": 0.0,
+   "mp_end_mi": 5.0,
+   "spill_lat": 45.641138,
+   "spill_lon": -110.906086,
+   "waterway": "Rocky Creek",
+   "hourly": [
+    {
+     "hour": 1,
+     "lat": 45.639559,
+     "lon": -110.911528,
+     "cum_dist_km": 0.46,
+     "velocity_mph": 0.27
+    },
+    {
+     "hour": 2,
+     "lat": 45.639672,
+     "lon": -110.916156,
+     "cum_dist_km": 0.83,
+     "velocity_mph": 0.27
+    },
+    {
+     "hour": 3,
+     "lat": 45.642505,
+     "lon": -110.920363,
+     "cum_dist_km": 1.37,
+     "velocity_mph": 0.27
+    },
+    {
+     "hour": 4,
+     "lat": 45.643395,
+     "lon": -110.925188,
+     "cum_dist_km": 1.77,
+     "velocity_mph": 0.27
+    },
+    {
+     "hour": 5,
+     "lat": 45.645108,
+     "lon": -110.929459,
+     "cum_dist_km": 2.17,
+     "velocity_mph": 0.27
+    },
+    {
+     "hour": 6,
+     "lat": 45.646935,
+     "lon": -110.932264,
+     "cum_dist_km": 2.61,
+     "velocity_mph": 0.27
+    },
+    {
+     "hour": 7,
+     "lat": 45.650042,
+     "lon": -110.937418,
+     "cum_dist_km": 3.15,
+     "velocity_mph": 0.27
+    },
+    {
+     "hour": 8,
+     "lat": 45.652464,
+     "lon": -110.940224,
+     "cum_dist_km": 3.5,
+     "velocity_mph": 0.27
+    },
+    {
+     "hour": 9,
+     "lat": 45.655616,
+     "lon": -110.944922,
+     "cum_dist_km": 4.02,
+     "velocity_mph": 0.28
+    },
+    {
+     "hour": 10,
+     "lat": 45.658359,
+     "lon": -110.945676,
+     "cum_dist_km": 4.37,
+     "velocity_mph": 0.28
+    },
+    {
+     "hour": 11,
+     "lat": 45.660642,
+     "lon": -110.949721,
+     "cum_dist_km": 4.86,
+     "velocity_mph": 0.28
+    },
+    {
+     "hour": 12,
+     "lat": 45.66407,
+     "lon": -110.952465,
+     "cum_dist_km": 5.31,
+     "velocity_mph": 0.28
+    }
+   ],
+   "gauges": [
+    {
+     "station_id": "06048650",
+     "name": "E Gallatin R ab Water Reclamation Fa nr Bozeman MT",
+     "discharge_cfs": 65,
+     "trace_km": 20.3,
+     "q_source": "p50-forced"
+    }
+   ],
+   "sites": [
+    {
+     "src": "GRP",
+     "name": "Moffit Gulch Road Bridge",
+     "stream": "Rocky Creek",
+     "main_stem": false,
+     "eta_hr": 8.53,
+     "eta": "8:32",
+     "dist_km": 3.8,
+     "offset_m": 83,
+     "grp_rank": "B",
+     "score": 3,
+     "score_src": "recon",
+     "q": 3,
+     "q_derived": false,
+     "action": "TRIB (respond regardless)",
+     "width_m": 10.1,
+     "vel_ms": 0.122,
+     "reporter": "Cody Harris",
+     "notes": "No real staging small creek. 50ft of boom. Score 3"
+    },
+    {
+     "src": "GRP",
+     "name": "Rocky Creek Farm",
+     "stream": "Rocky Creek",
+     "main_stem": false,
+     "eta_hr": 11.94,
+     "eta": "11:56",
+     "dist_km": 5.3,
+     "offset_m": 186,
+     "grp_rank": "B",
+     "score": 4,
+     "score_src": "recon",
+     "q": 4,
+     "q_derived": false,
+     "action": "TRIB (respond regardless)",
+     "width_m": 10.2,
+     "vel_ms": 0.126,
+     "reporter": "Jack Scott",
+     "notes": "4 - no staging"
+    }
+   ]
+  },
+  {
+   "id": "S2",
+   "mp_start_mi": 5.0,
+   "mp_end_mi": 10.0,
+   "spill_lat": 45.691787,
+   "spill_lon": -111.029548,
+   "waterway": "Bozeman Creek",
+   "hourly": [
+    {
+     "hour": 1,
+     "lat": 45.692517,
+     "lon": -111.02772,
+     "cum_dist_km": 0.16,
+     "velocity_mph": 0.14
+    },
+    {
+     "hour": 2,
+     "lat": 45.694779,
+     "lon": -111.027128,
+     "cum_dist_km": 0.42,
+     "velocity_mph": 0.14
+    },
+    {
+     "hour": 3,
+     "lat": 45.696632,
+     "lon": -111.028039,
+     "cum_dist_km": 0.64,
+     "velocity_mph": 0.14
+    },
+    {
+     "hour": 4,
+     "lat": 45.699466,
+     "lon": -111.026859,
+     "cum_dist_km": 0.99,
+     "velocity_mph": 0.14
+    },
+    {
+     "hour": 5,
+     "lat": 45.700221,
+     "lon": -111.027347,
+     "cum_dist_km": 1.08,
+     "velocity_mph": 0.14
+    },
+    {
+     "hour": 6,
+     "lat": 45.701298,
+     "lon": -111.029988,
+     "cum_dist_km": 1.34,
+     "velocity_mph": 0.14
+    },
+    {
+     "hour": 7,
+     "lat": 45.710218,
+     "lon": -111.035227,
+     "cum_dist_km": 2.51,
+     "velocity_mph": 1.49
+    },
+    {
+     "hour": 8,
+     "lat": 45.714411,
+     "lon": -111.047459,
+     "cum_dist_km": 4.58,
+     "velocity_mph": 1.13
+    },
+    {
+     "hour": 9,
+     "lat": 45.7162,
+     "lon": -111.057541,
+     "cum_dist_km": 5.57,
+     "velocity_mph": 1.75
+    },
+    {
+     "hour": 10,
+     "lat": 45.727594,
+     "lon": -111.072543,
+     "cum_dist_km": 7.85,
+     "velocity_mph": 1.65
+    },
+    {
+     "hour": 11,
+     "lat": 45.740695,
+     "lon": -111.074915,
+     "cum_dist_km": 9.95,
+     "velocity_mph": 1.23
+    },
+    {
+     "hour": 12,
+     "lat": 45.751972,
+     "lon": -111.082839,
+     "cum_dist_km": 12.11,
+     "velocity_mph": 1.5
+    }
+   ],
+   "gauges": [
+    {
+     "station_id": "06048650",
+     "name": "E Gallatin R ab Water Reclamation Fa nr Bozeman MT",
+     "discharge_cfs": 65,
+     "trace_km": 7.1,
+     "q_source": "p50-forced"
+    },
+    {
+     "station_id": "06052500",
+     "name": "Gallatin River at Logan MT",
+     "discharge_cfs": 585,
+     "trace_km": 62.4,
+     "q_source": "p50-forced"
+    }
+   ],
+   "sites": [
+    {
+     "src": "GRP",
+     "name": "Griffin Bridge",
+     "stream": "Bozeman Creek",
+     "main_stem": false,
+     "eta_hr": 4.3,
+     "eta": "4:18",
+     "dist_km": 1,
+     "offset_m": 250,
+     "grp_rank": "D",
+     "score": 4,
+     "score_src": "recon",
+     "q": 4,
+     "q_derived": false,
+     "action": "TRIB (respond regardless)",
+     "width_m": 27.3,
+     "vel_ms": 0.064,
+     "reporter": "Jack Scott",
+     "notes": "4 - no staging"
+    },
+    {
+     "src": "Recon-new",
+     "name": "New recon site #172 (Jack Scott)",
+     "stream": "Bozeman Creek",
+     "main_stem": false,
+     "eta_hr": 4.3,
+     "eta": "4:18",
+     "dist_km": 1,
+     "offset_m": 144,
+     "grp_rank": null,
+     "score": 4,
+     "score_src": "recon",
+     "q": 4,
+     "q_derived": false,
+     "action": "TRIB (respond regardless)",
+     "width_m": 27.3,
+     "vel_ms": 0.064,
+     "reporter": "Jack Scott",
+     "notes": "4 - no staging. *New site"
+    },
+    {
+     "src": "GRP",
+     "name": "Manley Road Bridge",
+     "stream": "East Gallatin River",
+     "main_stem": true,
+     "eta_hr": 7.55,
+     "eta": "7:33",
+     "dist_km": 3.7,
+     "offset_m": 23,
+     "grp_rank": "D",
+     "score": 4,
+     "score_src": "recon",
+     "q": 4,
+     "q_derived": false,
+     "action": "LATER (>5 h \u2014 time available)",
+     "width_m": 29.5,
+     "vel_ms": 0.508,
+     "reporter": "Jack Scott",
+     "notes": "4 - no staging. Difficult access, private"
+    },
+    {
+     "src": "GRP",
+     "name": "Spring Hill Rd Bridge",
+     "stream": "East Gallatin River",
+     "main_stem": true,
+     "eta_hr": 9.71,
+     "eta": "9:43",
+     "dist_km": 7.1,
+     "offset_m": 89,
+     "grp_rank": "B",
+     "score": 5,
+     "score_src": "recon",
+     "q": 5,
+     "q_derived": false,
+     "action": "LATER (>5 h \u2014 time available)",
+     "width_m": 32,
+     "vel_ms": 0.575,
+     "reporter": "Jack Scott",
+     "notes": "5 - small staging"
+    },
+    {
+     "src": "Recon-new",
+     "name": "New recon site #177 (Jack Scott)",
+     "stream": "East Gallatin River",
+     "main_stem": true,
+     "eta_hr": 11.64,
+     "eta": "11:38",
+     "dist_km": 11.3,
+     "offset_m": 204,
+     "grp_rank": null,
+     "score": 2,
+     "score_src": "recon",
+     "q": 2,
+     "q_derived": false,
+     "action": "LATER (>5 h \u2014 time available)",
+     "width_m": 34.1,
+     "vel_ms": 0.672,
+     "reporter": "Jack Scott",
+     "notes": "2 - no staging, difficult access"
+    },
+    {
+     "src": "Recon-new",
+     "name": "New recon site #178 (Jack Scott)",
+     "stream": "East Gallatin River",
+     "main_stem": true,
+     "eta_hr": 11.64,
+     "eta": "11:38",
+     "dist_km": 11.3,
+     "offset_m": 204,
+     "grp_rank": null,
+     "score": 2,
+     "score_src": "recon",
+     "q": 2,
+     "q_derived": false,
+     "action": "LATER (>5 h \u2014 time available)",
+     "width_m": 34.1,
+     "vel_ms": 0.672,
+     "reporter": "Jack Scott",
+     "notes": "2 - no staging, difficult access"
+    }
+   ]
+  },
+  {
+   "id": "S3",
+   "mp_start_mi": 10.0,
+   "mp_end_mi": 15.0,
+   "spill_lat": 45.748326,
+   "spill_lon": -111.12566,
+   "waterway": "unnamed channel \u2192 Aajker Creek",
+   "hourly": [
+    {
+     "hour": 1,
+     "lat": 45.751865,
+     "lon": -111.126927,
+     "cum_dist_km": 0.5,
+     "velocity_mph": 0.28
+    },
+    {
+     "hour": 2,
+     "lat": 45.755066,
+     "lon": -111.124804,
+     "cum_dist_km": 0.9,
+     "velocity_mph": 0.27
+    },
+    {
+     "hour": 3,
+     "lat": 45.762199,
+     "lon": -111.125,
+     "cum_dist_km": 1.82,
+     "velocity_mph": 1
+    },
+    {
+     "hour": 4,
+     "lat": 45.779437,
+     "lon": -111.12843,
+     "cum_dist_km": 4.04,
+     "velocity_mph": 1.41
+    },
+    {
+     "hour": 5,
+     "lat": 45.795806,
+     "lon": -111.128333,
+     "cum_dist_km": 6.3,
+     "velocity_mph": 2.05
+    },
+    {
+     "hour": 6,
+     "lat": 45.815375,
+     "lon": -111.138142,
+     "cum_dist_km": 9.3,
+     "velocity_mph": 1.62
+    },
+    {
+     "hour": 7,
+     "lat": 45.831971,
+     "lon": -111.147696,
+     "cum_dist_km": 11.56,
+     "velocity_mph": 1.21
+    },
+    {
+     "hour": 8,
+     "lat": 45.835901,
+     "lon": -111.155384,
+     "cum_dist_km": 13.45,
+     "velocity_mph": 1.19
+    },
+    {
+     "hour": 9,
+     "lat": 45.844058,
+     "lon": -111.170926,
+     "cum_dist_km": 15.47,
+     "velocity_mph": 1.19
+    },
+    {
+     "hour": 10,
+     "lat": 45.852812,
+     "lon": -111.17427,
+     "cum_dist_km": 17.42,
+     "velocity_mph": 1.19
+    },
+    {
+     "hour": 11,
+     "lat": 45.855093,
+     "lon": -111.185494,
+     "cum_dist_km": 19.14,
+     "velocity_mph": 0.9
+    },
+    {
+     "hour": 12,
+     "lat": 45.856574,
+     "lon": -111.194297,
+     "cum_dist_km": 20.83,
+     "velocity_mph": 1.14
+    }
+   ],
+   "gauges": [
+    {
+     "station_id": "06052500",
+     "name": "Gallatin River at Logan MT",
+     "discharge_cfs": 585,
+     "trace_km": 49.7,
+     "q_source": "p50-forced"
+    }
+   ],
+   "sites": [
+    {
+     "src": "GRP",
+     "name": "Airport Road Small Creek",
+     "stream": "Hyalite Creek",
+     "main_stem": false,
+     "eta_hr": 3.58,
+     "eta": "3:35",
+     "dist_km": 3,
+     "offset_m": 358,
+     "grp_rank": "D",
+     "score": null,
+     "score_src": "rank",
+     "q": 1,
+     "q_derived": true,
+     "action": "TRIB (respond regardless)",
+     "width_m": 10.1,
+     "vel_ms": 0.712,
+     "reporter": null,
+     "notes": ""
+    },
+    {
+     "src": "GRP",
+     "name": "Hyalite Creek",
+     "stream": "Hyalite Creek",
+     "main_stem": false,
+     "eta_hr": 3.62,
+     "eta": "3:37",
+     "dist_km": 3.1,
+     "offset_m": 11,
+     "grp_rank": "D",
+     "score": null,
+     "score_src": "rank",
+     "q": 1,
+     "q_derived": true,
+     "action": "TRIB (respond regardless)",
+     "width_m": 10.6,
+     "vel_ms": 0.698,
+     "reporter": null,
+     "notes": ""
+    },
+    {
+     "src": "GRP",
+     "name": "Penwell Bridge",
+     "stream": "East Gallatin River",
+     "main_stem": true,
+     "eta_hr": 5.34,
+     "eta": "5:20",
+     "dist_km": 7.4,
+     "offset_m": 17,
+     "grp_rank": "C",
+     "score": 3,
+     "score_src": "recon",
+     "q": 3,
+     "q_derived": false,
+     "action": "LATER (>5 h \u2014 time available)",
+     "width_m": 23.2,
+     "vel_ms": 0.841,
+     "reporter": "Ben Schmidt",
+     "notes": "Penwell / 3 / Limited stagging/parking private / Collect either side down stream of bridge"
+    },
+    {
+     "src": "GRP",
+     "name": "Hamilton Road Bridge",
+     "stream": "East Gallatin River",
+     "main_stem": true,
+     "eta_hr": 6.45,
+     "eta": "6:27",
+     "dist_km": 10.4,
+     "offset_m": 51,
+     "grp_rank": "C",
+     "score": 4,
+     "score_src": "recon",
+     "q": 4,
+     "q_derived": false,
+     "action": "LATER (>5 h \u2014 time available)",
+     "width_m": 37.5,
+     "vel_ms": 0.639,
+     "reporter": "Ben Schmidt",
+     "notes": "Hamilton / 4 / Challenging angle but Large eddy slow flow /  "
+    },
+    {
+     "src": "GRP",
+     "name": "Dry Creek Road Bridge",
+     "stream": "East Gallatin River",
+     "main_stem": true,
+     "eta_hr": 8.21,
+     "eta": "8:13",
+     "dist_km": 14,
+     "offset_m": 34,
+     "grp_rank": "C",
+     "score": 5,
+     "score_src": "recon",
+     "q": 5,
+     "q_derived": false,
+     "action": "LATER (>5 h \u2014 time available)",
+     "width_m": 44.5,
+     "vel_ms": 0.827,
+     "reporter": "Ben Schmidt",
+     "notes": "Dry creek / 5 / Good options up or down stream of bridge river right / "
+    }
+   ]
+  },
+  {
+   "id": "S4",
+   "mp_start_mi": 15.0,
+   "mp_end_mi": 20.0,
+   "spill_lat": 45.752986,
+   "spill_lon": -111.131564,
+   "waterway": "Hyalite Creek",
+   "hourly": [
+    {
+     "hour": 1,
+     "lat": 45.786981,
+     "lon": -111.128594,
+     "cum_dist_km": 4.37,
+     "velocity_mph": 2.42
+    },
+    {
+     "hour": 2,
+     "lat": 45.812974,
+     "lon": -111.139057,
+     "cum_dist_km": 8.25,
+     "velocity_mph": 2.19
+    },
+    {
+     "hour": 3,
+     "lat": 45.832976,
+     "lon": -111.150117,
+     "cum_dist_km": 11.22,
+     "velocity_mph": 1.56
+    },
+    {
+     "hour": 4,
+     "lat": 45.840516,
+     "lon": -111.164839,
+     "cum_dist_km": 13.86,
+     "velocity_mph": 1.68
+    },
+    {
+     "hour": 5,
+     "lat": 45.851098,
+     "lon": -111.17404,
+     "cum_dist_km": 16.37,
+     "velocity_mph": 1.55
+    },
+    {
+     "hour": 6,
+     "lat": 45.855527,
+     "lon": -111.186902,
+     "cum_dist_km": 18.56,
+     "velocity_mph": 1.17
+    },
+    {
+     "hour": 7,
+     "lat": 45.859019,
+     "lon": -111.195413,
+     "cum_dist_km": 20.89,
+     "velocity_mph": 1.47
+    },
+    {
+     "hour": 8,
+     "lat": 45.864252,
+     "lon": -111.199837,
+     "cum_dist_km": 22.22,
+     "velocity_mph": 0.39
+    },
+    {
+     "hour": 9,
+     "lat": 45.863944,
+     "lon": -111.214693,
+     "cum_dist_km": 24.2,
+     "velocity_mph": 0.84
+    },
+    {
+     "hour": 10,
+     "lat": 45.873051,
+     "lon": -111.231399,
+     "cum_dist_km": 26.19,
+     "velocity_mph": 0.37
+    },
+    {
+     "hour": 11,
+     "lat": 45.877543,
+     "lon": -111.237519,
+     "cum_dist_km": 27.71,
+     "velocity_mph": 1.24
+    },
+    {
+     "hour": 12,
+     "lat": 45.883029,
+     "lon": -111.244283,
+     "cum_dist_km": 29.1,
+     "velocity_mph": 0.78
+    }
+   ],
+   "gauges": [
+    {
+     "station_id": "06050000",
+     "name": "Hyalite C at Hyalite R S nr Bozeman MT",
+     "discharge_cfs": 185.1161827701897,
+     "trace_km": 0,
+     "q_source": "p50-forced",
+     "upstream_anchor": true,
+     "anchor_gauge_q_cfs": 107,
+     "anchor_gauge_da_sqmi": 48.5,
+     "anchor_upstream_km": 21.6
+    },
+    {
+     "station_id": "06052500",
+     "name": "Gallatin River at Logan MT",
+     "discharge_cfs": 585,
+     "trace_km": 48.9,
+     "q_source": "p50-forced"
+    }
+   ],
+   "sites": [
+    {
+     "src": "GRP",
+     "name": "Airport Road Small Creek",
+     "stream": "Hyalite Creek",
+     "main_stem": false,
+     "eta_hr": 0.46,
+     "eta": "0:28",
+     "dist_km": 2.2,
+     "offset_m": 370,
+     "grp_rank": "D",
+     "score": null,
+     "score_src": "rank",
+     "q": 1,
+     "q_derived": true,
+     "action": "TRIB (respond regardless)",
+     "width_m": 15.3,
+     "vel_ms": 1.181,
+     "reporter": null,
+     "notes": ""
+    },
+    {
+     "src": "GRP",
+     "name": "Hyalite Creek",
+     "stream": "Hyalite Creek",
+     "main_stem": false,
+     "eta_hr": 0.49,
+     "eta": "0:29",
+     "dist_km": 2.3,
+     "offset_m": 51,
+     "grp_rank": "D",
+     "score": null,
+     "score_src": "rank",
+     "q": 1,
+     "q_derived": true,
+     "action": "TRIB (respond regardless)",
+     "width_m": 15.8,
+     "vel_ms": 1.17,
+     "reporter": null,
+     "notes": ""
+    },
+    {
+     "src": "GRP",
+     "name": "Penwell Bridge",
+     "stream": "East Gallatin River",
+     "main_stem": true,
+     "eta_hr": 1.56,
+     "eta": "1:34",
+     "dist_km": 6.6,
+     "offset_m": 17,
+     "grp_rank": "C",
+     "score": 3,
+     "score_src": "recon",
+     "q": 3,
+     "q_derived": false,
+     "action": "NOTIFY (plume beats 120-min lead)",
+     "width_m": 24.5,
+     "vel_ms": 1.098,
+     "reporter": "Ben Schmidt",
+     "notes": "Penwell / 3 / Limited stagging/parking private / Collect either side down stream of bridge"
+    },
+    {
+     "src": "GRP",
+     "name": "Hamilton Road Bridge",
+     "stream": "East Gallatin River",
+     "main_stem": true,
+     "eta_hr": 2.41,
+     "eta": "2:25",
+     "dist_km": 9.6,
+     "offset_m": 51,
+     "grp_rank": "C",
+     "score": 4,
+     "score_src": "recon",
+     "q": 4,
+     "q_derived": false,
+     "action": "GO-2 backup",
+     "width_m": 37.5,
+     "vel_ms": 0.835,
+     "reporter": "Ben Schmidt",
+     "notes": "Hamilton / 4 / Challenging angle but Large eddy slow flow /  "
+    },
+    {
+     "src": "GRP",
+     "name": "Dry Creek Road Bridge",
+     "stream": "East Gallatin River",
+     "main_stem": true,
+     "eta_hr": 3.75,
+     "eta": "3:45",
+     "dist_km": 13.2,
+     "offset_m": 34,
+     "grp_rank": "C",
+     "score": 5,
+     "score_src": "recon",
+     "q": 5,
+     "q_derived": false,
+     "action": "GO-1 primary",
+     "width_m": 44.5,
+     "vel_ms": 1.082,
+     "reporter": "Ben Schmidt",
+     "notes": "Dry creek / 5 / Good options up or down stream of bridge river right / "
+    },
+    {
+     "src": "Recon-new",
+     "name": "New recon site #180 (Ben Schmidt)",
+     "stream": "East Gallatin River",
+     "main_stem": true,
+     "eta_hr": 7.3,
+     "eta": "7:18",
+     "dist_km": 21.6,
+     "offset_m": 143,
+     "grp_rank": null,
+     "score": 2,
+     "score_src": "recon",
+     "q": 2,
+     "q_derived": false,
+     "action": "LATER (>5 h \u2014 time available)",
+     "width_m": 45.7,
+     "vel_ms": 0.658,
+     "reporter": "Ben Schmidt",
+     "notes": "Story Creek at Swamp Road #2 / 2 / Riparian "
+    },
+    {
+     "src": "GRP",
+     "name": "Swamp Road Bridge",
+     "stream": "East Gallatin River",
+     "main_stem": true,
+     "eta_hr": 8.1,
+     "eta": "8:06",
+     "dist_km": 22.4,
+     "offset_m": 27,
+     "grp_rank": "C",
+     "score": 4,
+     "score_src": "recon",
+     "q": 4,
+     "q_derived": false,
+     "action": "LATER (>5 h \u2014 time available)",
+     "width_m": 45.9,
+     "vel_ms": 0.733,
+     "reporter": "Ben Schmidt",
+     "notes": "Swamp Road / 4 / Limited parking/staging collection river left above bridge"
+    },
+    {
+     "src": "GRP",
+     "name": "West Dry Creek Road Bridge",
+     "stream": "East Gallatin River",
+     "main_stem": true,
+     "eta_hr": 10.34,
+     "eta": "10:20",
+     "dist_km": 26.6,
+     "offset_m": 42,
+     "grp_rank": "C",
+     "score": 3,
+     "score_src": "recon",
+     "q": 3,
+     "q_derived": false,
+     "action": "LATER (>5 h \u2014 time available)",
+     "width_m": 49.6,
+     "vel_ms": 0.921,
+     "reporter": "Ben Schmidt",
+     "notes": "West Dry Creek / 3 / River left above or below bridge  / Limited parking/staging  / "
+    },
+    {
+     "src": "GRP",
+     "name": "Spaulding Bridge",
+     "stream": "East Gallatin River",
+     "main_stem": true,
+     "eta_hr": 11.86,
+     "eta": "11:52",
+     "dist_km": 29,
+     "offset_m": 389,
+     "grp_rank": "B",
+     "score": 4,
+     "score_src": "recon",
+     "q": 4,
+     "q_derived": false,
+     "action": "LATER (>5 h \u2014 time available)",
+     "width_m": 52.9,
+     "vel_ms": 0.348,
+     "reporter": "Ben Schmidt",
+     "notes": "Spaulding / 4 / Collect river left above bridge  / Limited staging/parking"
+    }
+   ]
+  },
+  {
+   "id": "S5",
+   "mp_start_mi": 20.0,
+   "mp_end_mi": 25.0,
+   "spill_lat": 45.830702,
+   "spill_lon": -111.284845,
+   "waterway": "unnamed channel \u2192 Camp Creek",
+   "hourly": [
+    {
+     "hour": 1,
+     "lat": 45.834247,
+     "lon": -111.285919,
+     "cum_dist_km": 0.4,
+     "velocity_mph": 0.24
+    },
+    {
+     "hour": 2,
+     "lat": 45.836215,
+     "lon": -111.288173,
+     "cum_dist_km": 0.69,
+     "velocity_mph": 0.24
+    },
+    {
+     "hour": 3,
+     "lat": 45.838412,
+     "lon": -111.291898,
+     "cum_dist_km": 1.1,
+     "velocity_mph": 0.24
+    },
+    {
+     "hour": 4,
+     "lat": 45.847217,
+     "lon": -111.296203,
+     "cum_dist_km": 2.3,
+     "velocity_mph": 1.78
+    },
+    {
+     "hour": 5,
+     "lat": 45.866016,
+     "lon": -111.307696,
+     "cum_dist_km": 5.06,
+     "velocity_mph": 1.73
+    },
+    {
+     "hour": 6,
+     "lat": 45.883486,
+     "lon": -111.309936,
+     "cum_dist_km": 7.52,
+     "velocity_mph": 2.38
+    },
+    {
+     "hour": 7,
+     "lat": 45.885159,
+     "lon": -111.32165,
+     "cum_dist_km": 8.58,
+     "velocity_mph": 0.22
+    },
+    {
+     "hour": 8,
+     "lat": 45.887193,
+     "lon": -111.320765,
+     "cum_dist_km": 8.82,
+     "velocity_mph": 0.22
+    },
+    {
+     "hour": 9,
+     "lat": 45.888991,
+     "lon": -111.329626,
+     "cum_dist_km": 9.58,
+     "velocity_mph": 1.53
+    },
+    {
+     "hour": 10,
+     "lat": 45.893201,
+     "lon": -111.347313,
+     "cum_dist_km": 11.07,
+     "velocity_mph": 1.97
+    },
+    {
+     "hour": 11,
+     "lat": 45.894087,
+     "lon": -111.366432,
+     "cum_dist_km": 12.63,
+     "velocity_mph": 0.28
+    },
+    {
+     "hour": 12,
+     "lat": 45.892303,
+     "lon": -111.371086,
+     "cum_dist_km": 13.04,
+     "velocity_mph": 0.27
+    }
+   ],
+   "gauges": [
+    {
+     "station_id": "06052500",
+     "name": "Gallatin River at Logan MT",
+     "discharge_cfs": 585,
+     "trace_km": 19.2,
+     "q_source": "p50-forced"
+    },
+    {
+     "station_id": "06054500",
+     "name": "Missouri River at Toston MT",
+     "discharge_cfs": 3720,
+     "trace_km": 67.6,
+     "q_source": "p50-forced"
+    }
+   ],
+   "sites": [
+    {
+     "src": "GRP",
+     "name": "Baker Creek",
+     "stream": "Camp Creek",
+     "main_stem": false,
+     "eta_hr": 2.91,
+     "eta": "2:55",
+     "dist_km": 1.1,
+     "offset_m": 283,
+     "grp_rank": "D",
+     "score": null,
+     "score_src": "rank",
+     "q": 1,
+     "q_derived": true,
+     "action": "TRIB (respond regardless)",
+     "width_m": 69.1,
+     "vel_ms": 0.105,
+     "reporter": null,
+     "notes": ""
+    },
+    {
+     "src": "GRP",
+     "name": "Camp Creek",
+     "stream": "Camp Creek",
+     "main_stem": false,
+     "eta_hr": 3.77,
+     "eta": "3:46",
+     "dist_km": 1.6,
+     "offset_m": 381,
+     "grp_rank": "D",
+     "score": null,
+     "score_src": "rank",
+     "q": 1,
+     "q_derived": true,
+     "action": "TRIB (respond regardless)",
+     "width_m": 69.2,
+     "vel_ms": 0.795,
+     "reporter": null,
+     "notes": ""
+    },
+    {
+     "src": "GRP",
+     "name": "WF Gallatin",
+     "stream": "Camp Creek",
+     "main_stem": false,
+     "eta_hr": 4.61,
+     "eta": "4:37",
+     "dist_km": 4,
+     "offset_m": 320,
+     "grp_rank": "B",
+     "score": null,
+     "score_src": "rank",
+     "q": 3,
+     "q_derived": true,
+     "action": "TRIB (respond regardless)",
+     "width_m": 73.7,
+     "vel_ms": 0.674,
+     "reporter": null,
+     "notes": ""
+    },
+    {
+     "src": "GRP",
+     "name": "Gallatin Forks FAS",
+     "stream": "Gallatin River",
+     "main_stem": true,
+     "eta_hr": 9.73,
+     "eta": "9:44",
+     "dist_km": 10.2,
+     "offset_m": 45,
+     "grp_rank": "A",
+     "score": 5,
+     "score_src": "recon",
+     "q": 5,
+     "q_derived": false,
+     "action": "LATER (>5 h \u2014 time available)",
+     "width_m": 81.1,
+     "vel_ms": 0.808,
+     "reporter": "Jack Scott",
+     "notes": "5 - med staging, main gallatin confluence with east fork"
+    },
+    {
+     "src": "Recon-new",
+     "name": "New recon site #188 (Jack Scott)",
+     "stream": "Gallatin River",
+     "main_stem": true,
+     "eta_hr": 9.73,
+     "eta": "9:44",
+     "dist_km": 10.2,
+     "offset_m": 37,
+     "grp_rank": null,
+     "score": 4,
+     "score_src": "recon",
+     "q": 4,
+     "q_derived": false,
+     "action": "LATER (>5 h \u2014 time available)",
+     "width_m": 81.1,
+     "vel_ms": 0.808,
+     "reporter": "Jack Scott",
+     "notes": "4 - short walk in, no direct staging. DS of Main/East confluence. "
+    },
+    {
+     "src": "Recon-new",
+     "name": "New recon site #189 (Cody Harris)",
+     "stream": "Gallatin River",
+     "main_stem": true,
+     "eta_hr": 9.73,
+     "eta": "9:44",
+     "dist_km": 10.2,
+     "offset_m": 21,
+     "grp_rank": null,
+     "score": null,
+     "score_src": "recon",
+     "q": 0,
+     "q_derived": true,
+     "action": "LATER (>5 h \u2014 time available)",
+     "width_m": 81.1,
+     "vel_ms": 0.808,
+     "reporter": "Cody Harris",
+     "notes": "Add spot on last of east fork."
+    }
+   ]
+  },
+  {
+   "id": "S6",
+   "mp_start_mi": 25.0,
+   "mp_end_mi": 30.0,
+   "spill_lat": 45.879044,
+   "spill_lon": -111.373176,
+   "waterway": "Gallatin River",
+   "hourly": [
+    {
+     "hour": 1,
+     "lat": 45.888526,
+     "lon": -111.391385,
+     "cum_dist_km": 1.29,
+     "velocity_mph": 0.25
+    },
+    {
+     "hour": 2,
+     "lat": 45.889101,
+     "lon": -111.397959,
+     "cum_dist_km": 1.81,
+     "velocity_mph": 0.25
+    },
+    {
+     "hour": 3,
+     "lat": 45.886925,
+     "lon": -111.409681,
+     "cum_dist_km": 3.02,
+     "velocity_mph": 0.77
+    },
+    {
+     "hour": 4,
+     "lat": 45.888506,
+     "lon": -111.425224,
+     "cum_dist_km": 4.42,
+     "velocity_mph": 1.41
+    },
+    {
+     "hour": 5,
+     "lat": 45.891952,
+     "lon": -111.444874,
+     "cum_dist_km": 6.6,
+     "velocity_mph": 1.5
+    },
+    {
+     "hour": 6,
+     "lat": 45.897598,
+     "lon": -111.449378,
+     "cum_dist_km": 7.34,
+     "velocity_mph": 0.25
+    },
+    {
+     "hour": 7,
+     "lat": 45.900516,
+     "lon": -111.452563,
+     "cum_dist_km": 7.75,
+     "velocity_mph": 0.25
+    },
+    {
+     "hour": 8,
+     "lat": 45.906042,
+     "lon": -111.458473,
+     "cum_dist_km": 8.78,
+     "velocity_mph": 1.9
+    },
+    {
+     "hour": 9,
+     "lat": 45.916701,
+     "lon": -111.471404,
+     "cum_dist_km": 10.57,
+     "velocity_mph": 0.39
+    },
+    {
+     "hour": 10,
+     "lat": 45.918171,
+     "lon": -111.478313,
+     "cum_dist_km": 11.36,
+     "velocity_mph": 0.37
+    },
+    {
+     "hour": 11,
+     "lat": 45.923082,
+     "lon": -111.492839,
+     "cum_dist_km": 13.37,
+     "velocity_mph": 0.34
+    },
+    {
+     "hour": 12,
+     "lat": 45.935268,
+     "lon": -111.492144,
+     "cum_dist_km": 14.86,
+     "velocity_mph": 1.41
+    }
+   ],
+   "gauges": [
+    {
+     "station_id": "06052500",
+     "name": "Gallatin River at Logan MT",
+     "discharge_cfs": 585,
+     "trace_km": 5.5,
+     "q_source": "p50-forced"
+    },
+    {
+     "station_id": "06054500",
+     "name": "Missouri River at Toston MT",
+     "discharge_cfs": 3720,
+     "trace_km": 53.9,
+     "q_source": "p50-forced"
+    }
+   ],
+   "sites": [
+    {
+     "src": "GRP",
+     "name": "Logan Trident Bridge",
+     "stream": "Gallatin River",
+     "main_stem": true,
+     "eta_hr": 4.67,
+     "eta": "4:40",
+     "dist_km": 5.8,
+     "offset_m": 44,
+     "grp_rank": "A",
+     "score": null,
+     "score_src": "rank",
+     "q": 4,
+     "q_derived": true,
+     "action": "GO-1 primary",
+     "width_m": 98.9,
+     "vel_ms": 0.67,
+     "reporter": null,
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "id": "S7",
+   "mp_start_mi": 30.0,
+   "mp_end_mi": 35.0,
+   "spill_lat": 45.886162,
+   "spill_lon": -111.432919,
+   "waterway": "Gallatin River",
+   "hourly": [
+    {
+     "hour": 1,
+     "lat": 45.896075,
+     "lon": -111.447729,
+     "cum_dist_km": 2.05,
+     "velocity_mph": 0.25
+    },
+    {
+     "hour": 2,
+     "lat": 45.899283,
+     "lon": -111.450622,
+     "cum_dist_km": 2.47,
+     "velocity_mph": 0.25
+    },
+    {
+     "hour": 3,
+     "lat": 45.901068,
+     "lon": -111.453661,
+     "cum_dist_km": 2.78,
+     "velocity_mph": 0.25
+    },
+    {
+     "hour": 4,
+     "lat": 45.911016,
+     "lon": -111.463109,
+     "cum_dist_km": 4.57,
+     "velocity_mph": 0.87
+    },
+    {
+     "hour": 5,
+     "lat": 45.915212,
+     "lon": -111.4753,
+     "cum_dist_km": 5.86,
+     "velocity_mph": 1.2
+    },
+    {
+     "hour": 6,
+     "lat": 45.92066,
+     "lon": -111.478897,
+     "cum_dist_km": 6.57,
+     "velocity_mph": 3.88
+    },
+    {
+     "hour": 7,
+     "lat": 45.926512,
+     "lon": -111.495801,
+     "cum_dist_km": 8.75,
+     "velocity_mph": 2.03
+    },
+    {
+     "hour": 8,
+     "lat": 45.938531,
+     "lon": -111.492415,
+     "cum_dist_km": 10.17,
+     "velocity_mph": 3.02
+    },
+    {
+     "hour": 9,
+     "lat": 45.957213,
+     "lon": -111.466768,
+     "cum_dist_km": 13.11,
+     "velocity_mph": 2.38
+    },
+    {
+     "hour": 10,
+     "lat": 45.964777,
+     "lon": -111.46434,
+     "cum_dist_km": 13.98,
+     "velocity_mph": 0.49
+    },
+    {
+     "hour": 11,
+     "lat": 45.972116,
+     "lon": -111.463869,
+     "cum_dist_km": 14.8,
+     "velocity_mph": 0.48
+    }
+   ],
+   "gauges": [
+    {
+     "station_id": "06052500",
+     "name": "Gallatin River at Logan MT",
+     "discharge_cfs": 585,
+     "trace_km": 0.5,
+     "q_source": "p50-forced"
+    },
+    {
+     "station_id": "06054500",
+     "name": "Missouri River at Toston MT",
+     "discharge_cfs": 3720,
+     "trace_km": 48.9,
+     "q_source": "p50-forced"
+    }
+   ],
+   "sites": [
+    {
+     "src": "GRP",
+     "name": "Logan Trident Bridge",
+     "stream": "Gallatin River",
+     "main_stem": true,
+     "eta_hr": 0.32,
+     "eta": "0:19",
+     "dist_km": 0.7,
+     "offset_m": 44,
+     "grp_rank": "A",
+     "score": null,
+     "score_src": "rank",
+     "q": 4,
+     "q_derived": true,
+     "action": "NOTIFY (plume beats 120-min lead)",
+     "width_m": 99.2,
+     "vel_ms": 0.669,
+     "reporter": null,
+     "notes": ""
+    },
+    {
+     "src": "GRP",
+     "name": "Headwaters Boat Ramp",
+     "stream": "Gallatin River",
+     "main_stem": true,
+     "eta_hr": 7.93,
+     "eta": "7:56",
+     "dist_km": 10.2,
+     "offset_m": 212,
+     "grp_rank": "A",
+     "score": null,
+     "score_src": "rank",
+     "q": 4,
+     "q_derived": true,
+     "action": "LATER (>5 h \u2014 time available)",
+     "width_m": 130.1,
+     "vel_ms": 1.351,
+     "reporter": null,
+     "notes": ""
+    }
+   ]
+  },
+  {
+   "id": "S8",
+   "mp_start_mi": 35.0,
+   "mp_end_mi": 38.4,
+   "spill_lat": 45.936594,
+   "spill_lon": -111.491688,
+   "waterway": "Missouri River",
+   "hourly": [
+    {
+     "hour": 1,
+     "lat": 45.945917,
+     "lon": -111.481659,
+     "cum_dist_km": 1.17,
+     "velocity_mph": 0.15
+    },
+    {
+     "hour": 2,
+     "lat": 45.949413,
+     "lon": -111.476815,
+     "cum_dist_km": 1.71,
+     "velocity_mph": 1.26
+    },
+    {
+     "hour": 3,
+     "lat": 45.961088,
+     "lon": -111.465301,
+     "cum_dist_km": 3.39,
+     "velocity_mph": 0.16
+    },
+    {
+     "hour": 4,
+     "lat": 45.961088,
+     "lon": -111.465301,
+     "cum_dist_km": 3.39,
+     "velocity_mph": 0.16
+    },
+    {
+     "hour": 5,
+     "lat": 45.964777,
+     "lon": -111.46434,
+     "cum_dist_km": 3.81,
+     "velocity_mph": 0.16
+    },
+    {
+     "hour": 6,
+     "lat": 45.964777,
+     "lon": -111.46434,
+     "cum_dist_km": 3.81,
+     "velocity_mph": 0.16
+    },
+    {
+     "hour": 7,
+     "lat": 45.970209,
+     "lon": -111.463787,
+     "cum_dist_km": 4.42,
+     "velocity_mph": 0.16
+    },
+    {
+     "hour": 8,
+     "lat": 45.972116,
+     "lon": -111.463869,
+     "cum_dist_km": 4.63,
+     "velocity_mph": 0.16
+    }
+   ],
+   "gauges": [
+    {
+     "station_id": "06036650",
+     "name": "Jefferson River near Three Forks MT",
+     "discharge_cfs": 1492.6132114447946,
+     "trace_km": 0,
+     "q_source": "p50-forced",
+     "upstream_anchor": true,
+     "anchor_gauge_q_cfs": 1030,
+     "anchor_gauge_da_sqmi": 9558,
+     "anchor_upstream_km": 9.2
+    },
+    {
+     "station_id": "06054500",
+     "name": "Missouri River at Toston MT",
+     "discharge_cfs": 3720,
+     "trace_km": 38.7,
+     "q_source": "p50-forced"
+    }
+   ],
+   "sites": [
+    {
+     "src": "GRP",
+     "name": "Headwaters Boat Ramp",
+     "stream": "Missouri River",
+     "main_stem": true,
+     "eta_hr": 0,
+     "eta": "0:00",
+     "dist_km": 0,
+     "offset_m": 212,
+     "grp_rank": "A",
+     "score": null,
+     "score_src": "rank",
+     "q": 4,
+     "q_derived": true,
+     "action": "NOTIFY (plume beats 120-min lead)",
+     "width_m": 225.5,
+     "vel_ms": 0.602,
+     "reporter": null,
+     "notes": ""
+    }
+   ]
+  }
+ ],
+ "unjoined_grp": [
+  "Kelly Canyon Bridge",
+  "Story Hill Road Bridge",
+  "Rocky Creek Road",
+  "Story Mill Bridge",
+  "Unnamed Ditch",
+  "Ross-Van Hoorn Ditch",
+  "Nelson Road Creek",
+  "Nelson Road Creek 2",
+  "Kerry Hogan",
+  "Spain Bridge",
+  "Dry Creek",
+  "Dry Creek II",
+  "Spain Ferris Fork Ditch",
+  "Mammoth Ditch",
+  "DN Hoffman Canal",
+  "Swamp Road Ditch",
+  "Story Creek at Swamp Road",
+  "Lower Creamery Ditch",
+  "Gallatin Frontage Road Bridge",
+  "4 Corners FAS staging area",
+  "Perks Canal",
+  "4 Corners FAS Bridge",
+  "Perks Canal",
+  "Baker Ditch (E-W) and Perks Canal (N-S)",
+  "Baker Ditch",
+  "Warm Springs Canal",
+  "Fairweather FAS"
+ ],
+ "unparsed_recon": [
+  {
+   "oid": 161,
+   "desc": "Possible grp strategy"
+  },
+  {
+   "oid": 189,
+   "desc": "Add spot on last of east fork."
+  }
+ ]
+}

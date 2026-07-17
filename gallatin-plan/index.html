@@ -59,6 +59,14 @@
 <header>
   <h1>Gallatin Corridor — Team Deployment Plan</h1>
   <div class="sub" id="meta">loading…</div>
+  <div id="scenbar" style="margin-top:8px; display:none">
+    <label class="sub" for="scenario">Flow scenario:&nbsp;</label>
+    <select id="scenario" style="background:var(--panel2); color:var(--text);
+            border:1px solid var(--line); border-radius:6px; padding:3px 8px; font-size:12px">
+      <option value="corridor_plan.json">Flows on run date</option>
+      <option value="corridor_plan_median.json">Seasonal median (p50)</option>
+    </select>
+  </div>
   <div class="stale" id="stale"></div>
 </header>
 <main>
@@ -95,12 +103,27 @@ const BADGE = (a) => {
   return "";
 };
 
-fetch("corridor_plan.json?v=" + Date.now()).then(r => {
-  if (!r.ok) throw new Error("corridor_plan.json HTTP " + r.status);
-  return r.json();
-}).then(plan => {
+function loadPlan(file) {
+  return fetch(file + "?v=" + Date.now()).then(r => {
+    if (!r.ok) throw new Error(file + " HTTP " + r.status);
+    return r.json();
+  }).then(render).catch(e => {
+    const el = $("#err");
+    el.style.display = "block";
+    el.textContent = "Failed to load corridor plan: " + e.message;
+  });
+}
+
+function render(plan) {
+  $("#err").style.display = "none";
+  $("#summary tbody").innerHTML = "";
+  $("#segs").innerHTML = "";
+  $("#cavs").innerHTML = "";
+  $("#stale").style.display = "none";
+  const flow = plan.flow_label ||
+    (plan.scenario === "median-p50" ? "seasonal median flows (p50)" : "flows at run time");
   $("#meta").textContent =
-    `Generated ${plan.generated_utc} · trace-engine v${plan.engine} · live flows at run time · ` +
+    `Generated ${plan.generated_utc} · trace-engine v${plan.engine} · ${flow} · ` +
     `${plan.lead_min}-min lead time · ${plan.focus_hr}-h window · † = quality from GRP rank (no recon)`;
   const ageDays = (Date.now() - Date.parse(plan.generated_utc.replace(" UTC", "Z").replace(" ", "T"))) / 864e5;
   if (isFinite(ageDays) && ageDays > 14) {
@@ -161,11 +184,14 @@ fetch("corridor_plan.json?v=" + Date.now()).then(r => {
   for (const u of plan.unparsed_recon || [])
     cavs.insertAdjacentHTML("beforeend",
       `<li>Recon OID ${u.oid} has no parseable 1–5 score: “${esc(u.desc.slice(0, 80))}”</li>`);
-}).catch(e => {
-  const el = $("#err");
-  el.style.display = "block";
-  el.textContent = "Failed to load corridor plan: " + e.message;
+}
+
+loadPlan("corridor_plan.json");
+// reveal the scenario picker only if the median run has been published
+fetch("corridor_plan_median.json?v=" + Date.now(), { method: "HEAD" }).then(r => {
+  if (r.ok) $("#scenbar").style.display = "block";
 });
+$("#scenario").addEventListener("change", (e) => loadPlan(e.target.value));
 </script>
 </body>
 </html>
