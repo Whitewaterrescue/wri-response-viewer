@@ -43,19 +43,6 @@
       "header": true,
       "footer": false
     },
-    "page_7": {
-      "id": "page_7",
-      "mode": "FIT_WINDOW",
-      "type": "NORMAL",
-      "layout": {
-        "LARGE": "layout_46"
-      },
-      "isDefault": false,
-      "isVisible": true,
-      "label": "Recon Survey",
-      "header": false,
-      "footer": false
-    },
     "page_8": {
       "id": "page_8",
       "mode": "FIT_WINDOW",
@@ -103,28 +90,6 @@
     "layout_0": {
       "type": "FIXED",
       "content": {
-        "4": {
-          "type": "WIDGET",
-          "widgetId": "widget_89",
-          "bbox": {
-            "left": "0.0%",
-            "right": "0.0%",
-            "top": "96.7%",
-            "bottom": "-0.3%",
-            "width": "100.0%",
-            "height": "3.6%"
-          },
-          "setting": {
-            "vCenter": false,
-            "hCenter": false,
-            "autoProps": {
-              "right": false,
-              "left": true,
-              "top": true,
-              "bottom": false
-            }
-          }
-        },
         "5": {
           "type": "WIDGET",
           "widgetId": "widget_114",
@@ -132,9 +97,9 @@
             "left": "0.0%",
             "right": "0.0%",
             "top": "0.0%",
-            "bottom": "3.3%",
+            "bottom": "0.0%",
             "width": "100.0%",
-            "height": "96.7%"
+            "height": "100.0%"
           },
           "setting": {
             "autoProps": {
@@ -147,7 +112,6 @@
         }
       },
       "order": [
-        "4",
         "5"
       ]
     },
@@ -1117,9 +1081,9 @@
             "left": "0.0%",
             "right": "0.0%",
             "top": "0.0%",
-            "bottom": "3.6%",
+            "bottom": "0.0%",
             "width": "100.0%",
-            "height": "96.4%"
+            "height": "100.0%"
           },
           "setting": {
             "autoProps": {
@@ -1131,60 +1095,15 @@
             },
             "hCenter": false
           }
-        },
-        "1": {
-          "type": "WIDGET",
-          "widgetId": "widget_64",
-          "bbox": {
-            "left": "0.0%",
-            "right": "0.0%",
-            "top": "96.4%",
-            "bottom": "0.0%",
-            "width": "100.0%",
-            "height": "3.6%"
-          },
-          "setting": {
-            "autoProps": {
-              "height": "AUTO",
-              "left": true,
-              "right": false,
-              "top": true,
-              "bottom": false
-            }
-          }
         }
       },
       "order": [
-        "0",
-        "1"
+        "0"
       ]
     },
     "layout_23": {
       "type": "FIXED",
       "content": {
-        "0": {
-          "type": "WIDGET",
-          "widgetId": "widget_65",
-          "bbox": {
-            "left": "0%",
-            "right": "0%",
-            "top": "96.4%",
-            "bottom": "0.0%",
-            "width": "100%",
-            "height": "3.6%"
-          },
-          "setting": {
-            "autoProps": {
-              "height": "AUTO",
-              "left": false,
-              "right": false,
-              "top": true,
-              "bottom": false,
-              "width": "STRETCH"
-            },
-            "hCenter": false
-          }
-        },
         "1": {
           "type": "WIDGET",
           "widgetId": "widget_83",
@@ -1231,7 +1150,6 @@
         }
       },
       "order": [
-        "0",
         "1",
         "2"
       ]
@@ -1502,9 +1420,9 @@
             "left": "0.0%",
             "right": "0.0%",
             "top": "0.0%",
-            "bottom": "3.2%",
+            "bottom": "0.0%",
             "width": "100.0%",
-            "height": "96.8%"
+            "height": "100.0%"
           },
           "setting": {
             "autoProps": {
@@ -1516,33 +1434,10 @@
             "vCenter": false,
             "hCenter": false
           }
-        },
-        "4": {
-          "type": "WIDGET",
-          "widgetId": "widget_89",
-          "bbox": {
-            "left": "0.0%",
-            "right": "0.0%",
-            "top": "96.7%",
-            "bottom": "-0.3%",
-            "width": "100.0%",
-            "height": "3.6%"
-          },
-          "setting": {
-            "vCenter": false,
-            "hCenter": false,
-            "autoProps": {
-              "right": false,
-              "left": true,
-              "top": true,
-              "bottom": false
-            }
-          }
         }
       },
       "order": [
-        "0",
-        "4"
+        "0"
       ]
     },
     "layout_34": {
@@ -1999,28 +1894,6 @@
     "layout_39": {
       "type": "FIXED",
       "content": {
-        "4": {
-          "type": "WIDGET",
-          "widgetId": "widget_89",
-          "bbox": {
-            "left": "0.0%",
-            "right": "0.0%",
-            "top": "96.7%",
-            "bottom": "-0.3%",
-            "width": "100.0%",
-            "height": "3.6%"
-          },
-          "setting": {
-            "vCenter": false,
-            "hCenter": false,
-            "autoProps": {
-              "right": false,
-              "left": true,
-              "top": true,
-              "bottom": false
-            }
-          }
-        },
         "5": {
           "type": "WIDGET",
           "widgetId": "widget_102",
@@ -2028,9 +1901,9 @@
             "left": "0.0%",
             "right": "0.0%",
             "top": "0.0%",
-            "bottom": "3.3%",
+            "bottom": "0.0%",
             "width": "100.0%",
-            "height": "96.7%"
+            "height": "100.0%"
           },
           "setting": {
             "autoProps": {
@@ -2043,7 +1916,6 @@
         }
       },
       "order": [
-        "4",
         "5"
       ]
     },
@@ -2475,29 +2347,6 @@
     "layout_44": {
       "type": "FIXED",
       "content": {
-        "0": {
-          "type": "WIDGET",
-          "widgetId": "widget_65",
-          "bbox": {
-            "left": "0%",
-            "right": "0%",
-            "top": "96.4%",
-            "bottom": "0.0%",
-            "width": "100%",
-            "height": "3.6%"
-          },
-          "setting": {
-            "autoProps": {
-              "height": "AUTO",
-              "left": false,
-              "right": false,
-              "top": true,
-              "bottom": false,
-              "width": "STRETCH"
-            },
-            "hCenter": false
-          }
-        },
         "1": {
           "type": "WIDGET",
           "widgetId": "widget_83",
@@ -2544,7 +2393,6 @@
         }
       },
       "order": [
-        "0",
         "1",
         "2"
       ]
@@ -2552,29 +2400,6 @@
     "layout_45": {
       "type": "FIXED",
       "content": {
-        "0": {
-          "type": "WIDGET",
-          "widgetId": "widget_65",
-          "bbox": {
-            "left": "0%",
-            "right": "0%",
-            "top": "96.4%",
-            "bottom": "0.0%",
-            "width": "100%",
-            "height": "3.6%"
-          },
-          "setting": {
-            "autoProps": {
-              "height": "AUTO",
-              "left": false,
-              "right": false,
-              "top": true,
-              "bottom": false,
-              "width": "STRETCH"
-            },
-            "hCenter": false
-          }
-        },
         "1": {
           "type": "WIDGET",
           "widgetId": "widget_83",
@@ -2621,7 +2446,6 @@
         }
       },
       "order": [
-        "0",
         "1",
         "2"
       ]
@@ -2971,28 +2795,6 @@
     "layout_53": {
       "type": "FIXED",
       "content": {
-        "4": {
-          "type": "WIDGET",
-          "widgetId": "widget_138",
-          "bbox": {
-            "left": "0.0%",
-            "right": "0.0%",
-            "top": "96.7%",
-            "bottom": "-0.3%",
-            "width": "100.0%",
-            "height": "3.6%"
-          },
-          "setting": {
-            "vCenter": false,
-            "hCenter": false,
-            "autoProps": {
-              "right": false,
-              "left": true,
-              "top": true,
-              "bottom": false
-            }
-          }
-        },
         "5": {
           "type": "WIDGET",
           "widgetId": "widget_139",
@@ -3000,9 +2802,9 @@
             "left": "0.0%",
             "right": "0.0%",
             "top": "0.0%",
-            "bottom": "3.3%",
+            "bottom": "0.0%",
             "width": "100.0%",
-            "height": "96.7%"
+            "height": "100.0%"
           },
           "setting": {
             "autoProps": {
@@ -3015,7 +2817,6 @@
         }
       },
       "order": [
-        "4",
         "5"
       ]
     },
@@ -3453,9 +3254,9 @@
             "left": "0.0%",
             "right": "0.0%",
             "top": "0.0%",
-            "bottom": "3.2%",
+            "bottom": "0.0%",
             "width": "100.0%",
-            "height": "96.8%"
+            "height": "100.0%"
           },
           "setting": {
             "autoProps": {
@@ -3467,33 +3268,10 @@
             "vCenter": false,
             "hCenter": false
           }
-        },
-        "4": {
-          "type": "WIDGET",
-          "widgetId": "widget_138",
-          "bbox": {
-            "left": "0.0%",
-            "right": "0.0%",
-            "top": "96.7%",
-            "bottom": "-0.3%",
-            "width": "100.0%",
-            "height": "3.6%"
-          },
-          "setting": {
-            "vCenter": false,
-            "hCenter": false,
-            "autoProps": {
-              "right": false,
-              "left": true,
-              "top": true,
-              "bottom": false
-            }
-          }
         }
       },
       "order": [
-        "0",
-        "4"
+        "0"
       ]
     },
     "layout_59": {
@@ -3908,28 +3686,6 @@
     "layout_63": {
       "type": "FIXED",
       "content": {
-        "4": {
-          "type": "WIDGET",
-          "widgetId": "widget_138",
-          "bbox": {
-            "left": "0.0%",
-            "right": "0.0%",
-            "top": "96.7%",
-            "bottom": "-0.3%",
-            "width": "100.0%",
-            "height": "3.6%"
-          },
-          "setting": {
-            "vCenter": false,
-            "hCenter": false,
-            "autoProps": {
-              "right": false,
-              "left": true,
-              "top": true,
-              "bottom": false
-            }
-          }
-        },
         "5": {
           "type": "WIDGET",
           "widgetId": "widget_176",
@@ -3937,9 +3693,9 @@
             "left": "0.0%",
             "right": "0.0%",
             "top": "0.0%",
-            "bottom": "3.3%",
+            "bottom": "0.0%",
             "width": "100.0%",
-            "height": "96.7%"
+            "height": "100.0%"
           },
           "setting": {
             "autoProps": {
@@ -3952,7 +3708,6 @@
         }
       },
       "order": [
-        "4",
         "5"
       ]
     },
@@ -4377,28 +4132,6 @@
     "layout_68": {
       "type": "FIXED",
       "content": {
-        "4": {
-          "type": "WIDGET",
-          "widgetId": "widget_178",
-          "bbox": {
-            "left": "0.0%",
-            "right": "0.0%",
-            "top": "96.7%",
-            "bottom": "-0.3%",
-            "width": "100.0%",
-            "height": "3.6%"
-          },
-          "setting": {
-            "vCenter": false,
-            "hCenter": false,
-            "autoProps": {
-              "right": false,
-              "left": true,
-              "top": true,
-              "bottom": false
-            }
-          }
-        },
         "5": {
           "type": "WIDGET",
           "widgetId": "widget_179",
@@ -4406,9 +4139,9 @@
             "left": "0.0%",
             "right": "0.0%",
             "top": "0.0%",
-            "bottom": "3.3%",
+            "bottom": "0.0%",
             "width": "100.0%",
-            "height": "96.7%"
+            "height": "100.0%"
           },
           "setting": {
             "autoProps": {
@@ -4421,7 +4154,6 @@
         }
       },
       "order": [
-        "4",
         "5"
       ]
     },
@@ -4836,9 +4568,9 @@
             "left": "0.0%",
             "right": "0.0%",
             "top": "0.0%",
-            "bottom": "3.2%",
+            "bottom": "0.0%",
             "width": "100.0%",
-            "height": "96.8%"
+            "height": "100.0%"
           },
           "setting": {
             "autoProps": {
@@ -4850,33 +4582,10 @@
             "vCenter": false,
             "hCenter": false
           }
-        },
-        "4": {
-          "type": "WIDGET",
-          "widgetId": "widget_178",
-          "bbox": {
-            "left": "0.0%",
-            "right": "0.0%",
-            "top": "96.7%",
-            "bottom": "-0.3%",
-            "width": "100.0%",
-            "height": "3.6%"
-          },
-          "setting": {
-            "vCenter": false,
-            "hCenter": false,
-            "autoProps": {
-              "right": false,
-              "left": true,
-              "top": true,
-              "bottom": false
-            }
-          }
         }
       },
       "order": [
-        "0",
-        "4"
+        "0"
       ]
     },
     "layout_74": {
@@ -5291,28 +5000,6 @@
     "layout_78": {
       "type": "FIXED",
       "content": {
-        "4": {
-          "type": "WIDGET",
-          "widgetId": "widget_178",
-          "bbox": {
-            "left": "0.0%",
-            "right": "0.0%",
-            "top": "96.7%",
-            "bottom": "-0.3%",
-            "width": "100.0%",
-            "height": "3.6%"
-          },
-          "setting": {
-            "vCenter": false,
-            "hCenter": false,
-            "autoProps": {
-              "right": false,
-              "left": true,
-              "top": true,
-              "bottom": false
-            }
-          }
-        },
         "5": {
           "type": "WIDGET",
           "widgetId": "widget_216",
@@ -5320,9 +5007,9 @@
             "left": "0.0%",
             "right": "0.0%",
             "top": "0.0%",
-            "bottom": "3.3%",
+            "bottom": "0.0%",
             "width": "100.0%",
-            "height": "96.7%"
+            "height": "100.0%"
           },
           "setting": {
             "autoProps": {
@@ -5335,7 +5022,6 @@
         }
       },
       "order": [
-        "4",
         "5"
       ]
     },
@@ -5760,28 +5446,6 @@
     "layout_83": {
       "type": "FIXED",
       "content": {
-        "4": {
-          "type": "WIDGET",
-          "widgetId": "widget_219",
-          "bbox": {
-            "left": "0.0%",
-            "right": "0.0%",
-            "top": "96.7%",
-            "bottom": "-0.3%",
-            "width": "100.0%",
-            "height": "3.6%"
-          },
-          "setting": {
-            "vCenter": false,
-            "hCenter": false,
-            "autoProps": {
-              "right": false,
-              "left": true,
-              "top": true,
-              "bottom": false
-            }
-          }
-        },
         "5": {
           "type": "WIDGET",
           "widgetId": "widget_220",
@@ -5789,9 +5453,9 @@
             "left": "0.0%",
             "right": "0.0%",
             "top": "0.0%",
-            "bottom": "3.3%",
+            "bottom": "0.0%",
             "width": "100.0%",
-            "height": "96.7%"
+            "height": "100.0%"
           },
           "setting": {
             "autoProps": {
@@ -5804,7 +5468,6 @@
         }
       },
       "order": [
-        "4",
         "5"
       ]
     },
@@ -6258,9 +5921,9 @@
             "left": "0.0%",
             "right": "0.0%",
             "top": "0.0%",
-            "bottom": "3.2%",
+            "bottom": "0.0%",
             "width": "100.0%",
-            "height": "96.8%"
+            "height": "100.0%"
           },
           "setting": {
             "autoProps": {
@@ -6272,33 +5935,10 @@
             "vCenter": false,
             "hCenter": false
           }
-        },
-        "4": {
-          "type": "WIDGET",
-          "widgetId": "widget_219",
-          "bbox": {
-            "left": "0.0%",
-            "right": "0.0%",
-            "top": "96.7%",
-            "bottom": "-0.3%",
-            "width": "100.0%",
-            "height": "3.6%"
-          },
-          "setting": {
-            "vCenter": false,
-            "hCenter": false,
-            "autoProps": {
-              "right": false,
-              "left": true,
-              "top": true,
-              "bottom": false
-            }
-          }
         }
       },
       "order": [
-        "0",
-        "4"
+        "0"
       ]
     },
     "layout_89": {
@@ -6713,28 +6353,6 @@
     "layout_93": {
       "type": "FIXED",
       "content": {
-        "4": {
-          "type": "WIDGET",
-          "widgetId": "widget_219",
-          "bbox": {
-            "left": "0.0%",
-            "right": "0.0%",
-            "top": "96.7%",
-            "bottom": "-0.3%",
-            "width": "100.0%",
-            "height": "3.6%"
-          },
-          "setting": {
-            "vCenter": false,
-            "hCenter": false,
-            "autoProps": {
-              "right": false,
-              "left": true,
-              "top": true,
-              "bottom": false
-            }
-          }
-        },
         "5": {
           "type": "WIDGET",
           "widgetId": "widget_253",
@@ -6742,9 +6360,9 @@
             "left": "0.0%",
             "right": "0.0%",
             "top": "0.0%",
-            "bottom": "3.3%",
+            "bottom": "0.0%",
             "width": "100.0%",
-            "height": "96.7%"
+            "height": "100.0%"
           },
           "setting": {
             "autoProps": {
@@ -6757,7 +6375,6 @@
         }
       },
       "order": [
-        "4",
         "5"
       ]
     },
@@ -8529,36 +8146,6 @@
       "useDataSourcesEnabled": false,
       "useDataSources": []
     },
-    "widget_64": {
-      "uri": "widgets/common/menu/",
-      "version": "1.20.0",
-      "label": "Menu 2",
-      "config": {
-        "type": "nav",
-        "vertical": false,
-        "menuStyle": "pills"
-      },
-      "id": "widget_64"
-    },
-    "widget_65": {
-      "uri": "widgets/common/menu/",
-      "version": "1.20.0",
-      "label": "Menu 3",
-      "config": {
-        "type": "nav",
-        "vertical": false,
-        "menuStyle": "pills",
-        "advanced": true,
-        "variant": {
-          "item": {
-            "active": {
-              "bg": "#c85716"
-            }
-          }
-        }
-      },
-      "id": "widget_65"
-    },
     "widget_83": {
       "uri": "widgets/common/embed/",
       "version": "1.20.0",
@@ -8582,31 +8169,6 @@
       },
       "id": "widget_84",
       "useDataSources": []
-    },
-    "widget_89": {
-      "uri": "widgets/common/menu/",
-      "version": "1.20.0",
-      "label": "Menu 4",
-      "config": {
-        "type": "nav",
-        "vertical": false,
-        "menuStyle": "pills",
-        "advanced": true,
-        "variant": {
-          "root": {
-            "bg": "var(--dark)"
-          },
-          "item": {
-            "active": {
-              "bg": "#c85716"
-            },
-            "default": {
-              "color": "var(--light)"
-            }
-          }
-        }
-      },
-      "id": "widget_89"
     },
     "widget_90": {
       "uri": "widgets/common/button/",
@@ -11608,17 +11170,6 @@
       "id": "widget_137",
       "useDataSources": []
     },
-    "widget_138": {
-      "uri": "widgets/common/menu/",
-      "version": "1.20.0",
-      "label": "Menu 5",
-      "config": {
-        "type": "nav",
-        "vertical": false,
-        "menuStyle": "pills"
-      },
-      "id": "widget_138"
-    },
     "widget_139": {
       "uri": "widgets/layout/sidebar/",
       "version": "1.20.0",
@@ -14187,17 +13738,6 @@
       },
       "id": "widget_177",
       "useDataSources": []
-    },
-    "widget_178": {
-      "uri": "widgets/common/menu/",
-      "version": "1.20.0",
-      "label": "Menu 6",
-      "config": {
-        "type": "nav",
-        "vertical": false,
-        "menuStyle": "pills"
-      },
-      "id": "widget_178"
     },
     "widget_179": {
       "uri": "widgets/layout/sidebar/",
@@ -16802,17 +16342,6 @@
       },
       "id": "widget_218",
       "useDataSources": []
-    },
-    "widget_219": {
-      "uri": "widgets/common/menu/",
-      "version": "1.20.0",
-      "label": "Menu 7",
-      "config": {
-        "type": "nav",
-        "vertical": false,
-        "menuStyle": "pills"
-      },
-      "id": "widget_219"
     },
     "widget_220": {
       "uri": "widgets/layout/sidebar/",
@@ -29857,9 +29386,6 @@
     },
     {
       "page_5": []
-    },
-    {
-      "page_7": []
     },
     {
       "page_8": []
