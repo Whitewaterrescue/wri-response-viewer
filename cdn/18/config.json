@@ -23817,6 +23817,14 @@
               "Adjacent_Receiving_Waterbody",
               "Site_Contact"
             ]
+          },
+          {
+            "url": "https://services2.arcgis.com/pOZUlCpCrXOga4Vx/arcgis/rest/services/WDOE_GRPs_Public_Release/FeatureServer/0",
+            "nameField": "ShortName",
+            "bufferM": 500,
+            "extraFields": [
+              "SOURCE_TYPE"
+            ]
           }
         ],
         "receptorLayers": [],
