@@ -290,6 +290,12 @@
         "22": {
           "type": "WIDGET",
           "widgetId": "widget_294"
+        },
+        "23": {
+          "type": "WIDGET",
+          "widgetId": "widget_295",
+          "bbox": {},
+          "setting": {}
         }
       },
       "type": "FIXED",
@@ -307,7 +313,8 @@
         "19",
         "20",
         "21",
-        "22"
+        "22",
+        "23"
       ]
     },
     "layout_7": {
@@ -3230,6 +3237,12 @@
           "widgetId": "widget_291",
           "bbox": {},
           "setting": {}
+        },
+        "14": {
+          "type": "WIDGET",
+          "widgetId": "widget_296",
+          "bbox": {},
+          "setting": {}
         }
       },
       "type": "FIXED",
@@ -3241,7 +3254,8 @@
         "9",
         "10",
         "11",
-        "13"
+        "13",
+        "14"
       ]
     },
     "layout_58": {
@@ -24045,6 +24059,36 @@
       },
       "id": "widget_294",
       "useDataSources": []
+    },
+    "widget_295": {
+      "id": "widget_295",
+      "uri": "widgets/presentation-mode/",
+      "version": "1.0.0",
+      "label": "Presentation Mode",
+      "config": {
+        "clientName": "BNSF",
+        "mapKey": "response",
+        "serviceUrl": "https://services6.arcgis.com/Ji79lWGR5B33LhY7/arcgis/rest/services/WRI_Presentations/FeatureServer/0",
+        "portalUrl": "https://wrienviro.maps.arcgis.com"
+      },
+      "useMapWidgetIds": [
+        "widget_1"
+      ]
+    },
+    "widget_296": {
+      "id": "widget_296",
+      "uri": "widgets/presentation-mode/",
+      "version": "1.0.0",
+      "label": "Presentation Mode (Wildfire)",
+      "config": {
+        "clientName": "BNSF",
+        "mapKey": "wildfire",
+        "serviceUrl": "https://services6.arcgis.com/Ji79lWGR5B33LhY7/arcgis/rest/services/WRI_Presentations/FeatureServer/0",
+        "portalUrl": "https://wrienviro.maps.arcgis.com"
+      },
+      "useMapWidgetIds": [
+        "widget_152"
+      ]
     }
   },
   "widgetsManifest": {},
@@ -24926,7 +24970,14 @@
     }
   },
   "attributes": {
-    "portalUrl": "https://WRIEnviro.maps.arcgis.com"
+    "portalUrl": "https://WRIEnviro.maps.arcgis.com",
+    "isWebTier": false,
+    "clientId": "bnkHzs9MeDgsIsCK",
+    "express": false,
+    "title": "BNSF Response Viewer",
+    "description": "",
+    "type": "Web Experience",
+    "thumbnail": null
   },
   "sharedThemeVariables": null,
   "dataSources": {
