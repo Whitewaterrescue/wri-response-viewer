@@ -72,6 +72,15 @@
   #qrBox img { display: block; width: 128px; height: 128px; }
   #qrBox .cap { font-size: 11px; font-weight: 700; margin-top: 5px; letter-spacing: .3px; }
   @media (max-width: 700px) { #qrBox, #fsBtn { display: none; } }
+
+  /* scheduled-start countdown */
+  #countdown {
+    position: absolute; inset: 0; display: none;
+    flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+    background: #141515; text-align: center;
+  }
+  #countdown .lbl { font-weight: 700; font-size: 18px; letter-spacing: 2px; opacity: .8; }
+  #countdown .num { font-weight: 800; font-size: 64px; font-variant-numeric: tabular-nums; color: var(--crimson); }
 </style>
 </head>
 <body>
@@ -87,6 +96,10 @@
   <div id="qrBox">
     <img id="qrImg" alt="QR — watch on your phone">
     <div class="cap">WATCH ON YOUR PHONE</div>
+  </div>
+  <div id="countdown">
+    <div class="lbl">LIVE FEED BEGINS IN</div>
+    <div class="num" id="cdNum">--:--</div>
   </div>
 </div>
 <script>
@@ -139,6 +152,57 @@
       chip.classList.add('hidden');
     }
   });
+
+  // wall-clock sync: every client (viewer panel + QR phones) seeks to the same
+  // position computed from a shared anchor in sync.json, so all screens show the
+  // same moment (~1s, limited by device clock accuracy). sync.json:
+  //   {"mode":"loop","epoch":"<ISO>"}       — synced loop, always "on air"
+  //   {"mode":"scheduled","start":"<ISO>"}  — countdown until start, then synced
+  // Disable per-client with ?sync=0. Re-fetched every 60s so a day-of schedule
+  // change reaches phones that loaded the page early.
+  var syncCfg = null;
+  var cd = document.getElementById('countdown');
+  var cdNum = document.getElementById('cdNum');
+
+  function fetchSync() {
+    fetch('./sync.json?cb=' + Date.now(), { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (cfg) { if (cfg) syncCfg = cfg; })
+      .catch(function () {});
+  }
+
+  function fmt(sec) {
+    sec = Math.max(0, Math.ceil(sec));
+    var h = Math.floor(sec / 3600), m = Math.floor(sec % 3600 / 60), s = sec % 60;
+    var p = function (n) { return (n < 10 ? '0' : '') + n; };
+    return (h ? h + ':' + p(m) : m) + ':' + p(s);
+  }
+
+  function applySync() {
+    if (!syncCfg || !vid.duration) return;
+    var anchor = Date.parse(syncCfg.mode === 'scheduled' ? syncCfg.start : syncCfg.epoch);
+    if (isNaN(anchor)) return;
+    var elapsed = (Date.now() - anchor) / 1000;
+    if (elapsed < 0) {                       // scheduled, not started yet
+      vid.pause();
+      cdNum.textContent = fmt(-elapsed);
+      cd.style.display = 'flex';
+      return;
+    }
+    if (cd.style.display === 'flex') cd.style.display = 'none';
+    if (vid.paused) vid.play().catch(function () {});
+    var want = elapsed % vid.duration;
+    var raw = Math.abs(vid.currentTime - want);
+    var diff = Math.min(raw, vid.duration - raw);   // circular: no seek storm at loop wrap
+    if (diff > 1.5) vid.currentTime = want;
+  }
+
+  if (params.get('sync') !== '0') {
+    fetchSync();
+    setInterval(fetchSync, 60000);
+    vid.addEventListener('loadedmetadata', applySync);
+    setInterval(applySync, 1000);
+  }
 
   document.getElementById('fsBtn').addEventListener('click', function (e) {
     e.stopPropagation();
