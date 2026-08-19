@@ -302,6 +302,10 @@
         "25": {
           "type": "WIDGET",
           "widgetId": "widget_301"
+        },
+        "26": {
+          "type": "WIDGET",
+          "widgetId": "widget_302"
         }
       },
       "type": "FIXED",
@@ -321,7 +325,8 @@
         "21",
         "23",
         "24",
-        "25"
+        "25",
+        "26"
       ]
     },
     "layout_7": {
@@ -7420,6 +7425,10 @@
             "widget_297": {
               "width": 340,
               "height": 460
+            },
+            "widget_302": {
+              "width": 1400,
+              "height": 900
             }
           },
           "arrangement": "floating"
@@ -24210,6 +24219,18 @@
         "enableLabel": false
       },
       "id": "widget_301",
+      "useDataSources": []
+    },
+    "widget_302": {
+      "uri": "widgets/common/embed/",
+      "version": "1.20.0",
+      "label": "Work Chart",
+      "config": {
+        "embedType": "url",
+        "expression": "<p>https://script.google.com/macros/s/AKfycbytFBip-cbr-ohGpVGFoFBQ3spMLCswlbP26B4Syw0rrDs_x2hO4FqpdFzR6Mb3h9Ke/exec?page=v2-workchart</p>",
+        "enableLabel": false
+      },
+      "id": "widget_302",
       "useDataSources": []
     }
   },
