@@ -119,6 +119,14 @@
   }
   #ctlBar button.gray { background: var(--gray); }
   #ctlBar #ctlMsg { font-size: 12px; font-weight: 700; opacity: .85; min-width: 70px; text-align: center; }
+  #ctlBar #ctlPos {
+    font-size: 13px; font-weight: 800; font-variant-numeric: tabular-nums;
+    letter-spacing: .5px; padding: 6px 10px; border-radius: 8px;
+    background: rgba(58,60,60,.9); border: 1px solid rgba(255,255,255,.2);
+    white-space: nowrap;
+  }
+  #ctlBar #ctlPos .st { color: var(--crimson); margin-right: 8px; }
+  #ctlBar #ctlPos.hold .st { color: #9ca3af; }
 </style>
 </head>
 <body>
@@ -144,6 +152,7 @@
     <div class="lbl">TAP TO START</div>
   </div>
   <div id="ctlBar">
+    <span id="ctlPos"><span class="st">LIVE</span><span class="tm">--:-- / --:--</span></span>
     <input id="ctlPin" type="password" inputmode="numeric" placeholder="PIN" autocomplete="off">
     <button data-act="pause" class="gray">⏸ Pause</button>
     <button data-act="resume">▶ Resume</button>
@@ -317,6 +326,24 @@
     bar.style.display = 'flex';
     bar.addEventListener('click', function (e) { e.stopPropagation(); });
     try { pinEl.value = localStorage.getItem('dvCtlPin') || ''; } catch (err) {}
+    // live readout: what every synced screen is showing right now
+    // (this player is itself synced within ~1.5s, so read our own playhead)
+    var posEl = document.getElementById('ctlPos');
+    var posSt = posEl.querySelector('.st');
+    var posTm = posEl.querySelector('.tm');
+    setInterval(function () {
+      if (!vid.duration) return;
+      var cfg = currentCfg();
+      if (cfg && cfg.mode === 'scheduled' && Date.parse(cfg.start) > Date.now()) {
+        posSt.textContent = 'COUNTDOWN';
+        posEl.classList.add('hold');
+        posTm.textContent = 'starts in ' + fmt((Date.parse(cfg.start) - Date.now()) / 1000);
+        return;
+      }
+      posSt.textContent = holdPaused ? 'STANDBY' : 'LIVE';
+      posEl.classList.toggle('hold', holdPaused);
+      posTm.textContent = fmt(vid.currentTime) + ' / ' + fmt(vid.duration);
+    }, 1000);
     var msgT;
     function msg(t) {
       msgEl.textContent = t;
