@@ -98,6 +98,26 @@
   }
   #tapStart .lbl { font-weight: 800; font-size: 20px; letter-spacing: 2px; }
 
+  /* status banner — a black rectangle with no cue is untriageable in the field */
+  #status {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    display: none; align-items: center; gap: 10px;
+    background: rgba(20,21,21,.92); border: 1px solid rgba(255,255,255,.25);
+    padding: 12px 20px; border-radius: 10px;
+    font-weight: 700; font-size: 15px; letter-spacing: .5px; text-align: center;
+  }
+  #status.show { display: flex; }
+  #status.err { border-color: var(--crimson); color: #ffd7d8; }
+
+  /* ?diag=1 — playback telemetry for triaging a screen that will not play */
+  #diag {
+    position: absolute; top: 8px; left: 8px; display: none;
+    background: rgba(0,0,0,.82); border: 1px solid rgba(255,255,255,.25);
+    padding: 8px 10px; border-radius: 8px;
+    font-family: ui-monospace, Consolas, monospace; font-size: 12px; line-height: 1.5;
+    white-space: pre; text-align: left; pointer-events: none;
+  }
+
   /* PIN-gated operator bar (?ctl=1) */
   #ctlBar {
     position: absolute; top: 60px; left: 50%; transform: translateX(-50%);
@@ -138,6 +158,8 @@
     <div id="clock"></div>
   </div>
   <div id="soundChip">🔇 TAP FOR SOUND</div>
+  <div id="status"></div>
+  <div id="diag"></div>
   <div id="fsBtn" title="Fullscreen">⛶</div>
   <div id="qrBox">
     <img id="qrImg" alt="QR — watch on your phone">
@@ -212,6 +234,29 @@
   });
   vid.addEventListener('playing', function () { tapStart.style.display = 'none'; });
 
+  // every failure below used to render as the same black rectangle: decode error,
+  // dead network, unsupported codec, endless buffering. Name them on screen.
+  var statusEl = document.getElementById('status');
+  function showStatus(txt, isErr) {
+    statusEl.textContent = txt;
+    statusEl.classList.add('show');
+    statusEl.classList.toggle('err', !!isErr);
+  }
+  function hideStatus() { statusEl.classList.remove('show', 'err'); }
+
+  var ERRS = { 1: 'load aborted', 2: 'network', 3: 'decode failed', 4: 'source not supported' };
+  vid.addEventListener('error', function () {
+    var c = (vid.error && vid.error.code) || 0;
+    showStatus('VIDEO ERROR ' + c + ' — ' + (ERRS[c] || 'unknown'), true);
+  });
+  vid.addEventListener('waiting', function () { if (!holdPaused) showStatus('BUFFERING…', false); });
+  vid.addEventListener('stalled', function () { if (vid.readyState < 3) showStatus('BUFFERING…', false); });
+  vid.addEventListener('playing', hideStatus);
+  vid.addEventListener('canplay', hideStatus);
+  setTimeout(function () {
+    if (vid.readyState < 2 && !vid.error) showStatus('LOADING FEED…', false);
+  }, 6000);
+
   // tap anywhere = unmute (autoplay policy requires starting muted);
   // subsequent taps toggle mute. Also retries play() in case autoplay was blocked.
   document.getElementById('stage').addEventListener('click', function () {
@@ -243,21 +288,45 @@
   var CTL_URL = 'https://script.google.com/macros/s/AKfycbyBTYx3pujbZRSY_3MCTz9UjV0_2VRBlw4U8a00I5bKOGtB9_NnhsKB6dM5WAqJfq3J2w/exec';
   var syncCfg = null;
   var gasCfg = null, gasAt = 0;
+
+  // Never trust the device clock. Wall-mounted panels and kiosk PCs routinely sit
+  // days off (dead CMOS battery, no NTP, re-imaged), and a clock behind the epoch
+  // makes elapsed negative -> a bogus seek target every single second. Both the
+  // control API (`now`) and the github.io `Date` response header give us the real
+  // time; the offset is applied to every sync calculation below.
+  var clockOffset = 0;
+  function now() { return Date.now() + clockOffset; }
+  function adoptServerTime(iso, sentAt) {
+    var srv = Date.parse(iso);
+    if (isNaN(srv)) return;
+    clockOffset = srv + (Date.now() - sentAt) / 2 - Date.now();
+  }
   var cd = document.getElementById('countdown');
   var cdNum = document.getElementById('cdNum');
   var badge = document.getElementById('liveBadge');
   var badgeTxt = document.getElementById('badgeTxt');
 
   function fetchSync() {
-    fetch('./sync.json?cb=' + Date.now(), { cache: 'no-store' })
-      .then(function (r) { return r.ok ? r.json() : null; })
+    var t0 = Date.now();
+    fetch('./sync.json?cb=' + t0, { cache: 'no-store' })
+      .then(function (r) {
+        if (!r.ok) return null;
+        // same-origin, so the Date header is readable: a free ~1s server clock
+        if (!gasCfg) adoptServerTime(r.headers.get('date'), t0);
+        return r.json();
+      })
       .then(function (cfg) { if (cfg) syncCfg = cfg; })
       .catch(function () {});
   }
   function fetchCtl() {
+    var t0 = Date.now();
     fetch(CTL_URL, { cache: 'no-store' })
       .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (cfg) { if (cfg && cfg.mode) { gasCfg = cfg; gasAt = Date.now(); } })
+      .then(function (cfg) {
+        if (!cfg || !cfg.mode) return;
+        gasCfg = cfg; gasAt = Date.now();
+        if (cfg.now) adoptServerTime(cfg.now, t0);
+      })
       .catch(function () {});
   }
   function currentCfg() {
@@ -279,12 +348,36 @@
     badgeTxt.textContent = on ? 'STANDBY' : 'LIVE';
   }
 
+  function mod(n, m) { return ((n % m) + m) % m; }
+
+  // Drift correction. A hard seek is expensive: it flushes the decode pipeline and
+  // forces a byte-range refetch of a 98MB file. Correcting 1.5s of drift that way
+  // once per second is a death spiral on a slow client (smartboard OPS module also
+  // rendering the ExB map) - seek, stall, drift further, seek again - and the panel
+  // never survives long enough to paint a frame, so it just reads as a black screen.
+  // So: ignore trivial drift, correct small drift by nudging playbackRate (invisible
+  // on aerial footage), and reserve hard seeks for large gaps with a cooldown. A
+  // client that still cannot hold sync gives up and free-runs a few seconds behind,
+  // which is strictly better than a black screen.
+  var SOFT_S = 0.4;          // below this, leave it alone
+  var HARD_S = 6;            // above this, a seek is worth the cost
+  var RELAX_HARD_S = 30;     // ...raised to this while relaxed (see below)
+  var SEEK_COOLDOWN = 10000; // ms between hard seeks
+  var MAX_RATE = 0.10;       // +/-10% playback rate authority
+  var lastSeekAt = 0, seekCount = 0, seekWindowAt = 0, relaxedUntil = 0, lastDrift = 0;
+
+  function setRate(r) {
+    if (Math.abs(vid.playbackRate - r) > 0.005) {
+      try { vid.playbackRate = r; } catch (e) {}
+    }
+  }
+
   function applySync() {
     var cfg = currentCfg();
-    if (!cfg || !vid.duration) return;
+    if (!cfg || !vid.duration || !isFinite(vid.duration)) return;
     var anchor = Date.parse(cfg.mode === 'scheduled' ? cfg.start : cfg.epoch);
     if (isNaN(anchor)) return;
-    var elapsed = (Date.now() - anchor) / 1000;
+    var elapsed = (now() - anchor) / 1000;
     if (cfg.mode === 'scheduled' && elapsed < 0) {   // not started yet
       vid.pause();
       cdNum.textContent = fmt(-elapsed);
@@ -294,21 +387,75 @@
     if (cd.style.display === 'flex') cd.style.display = 'none';
 
     if (cfg.pausedAt) {                              // operator hold
-      var at = ((Date.parse(cfg.pausedAt) - anchor) / 1000) % vid.duration;
-      if (at < 0 || isNaN(at)) at = 0;
+      var at = mod((Date.parse(cfg.pausedAt) - anchor) / 1000, vid.duration);
+      if (isNaN(at)) at = 0;
       if (!holdPaused) setHold(true);
       if (!vid.paused) vid.pause();
-      if (Math.abs(vid.currentTime - at) > 1.5) vid.currentTime = at;
+      setRate(1);
+      if (!vid.seeking && Math.abs(vid.currentTime - at) > 1.5) vid.currentTime = at;
       return;
     }
     if (holdPaused) setHold(false);
 
     if (vid.paused && tapStart.style.display !== 'flex') vid.play().catch(function () {});
-    var want = elapsed % vid.duration;
-    var raw = Math.abs(vid.currentTime - want);
-    var diff = Math.min(raw, vid.duration - raw);   // circular: no seek storm at loop wrap
-    if (diff > 1.5) vid.currentTime = want;
+
+    // signed shortest distance to the target on the circular timeline;
+    // positive = we are behind and need to catch up
+    var want = mod(elapsed, vid.duration);
+    var d = mod(want - vid.currentTime + vid.duration / 2, vid.duration) - vid.duration / 2;
+    lastDrift = d;
+
+    // mid-seek or starved of frames: touching currentTime now is what causes the spiral
+    if (vid.seeking || vid.readyState < 3) return;
+
+    if (Math.abs(d) <= SOFT_S) { setRate(1); return; }
+
+    var nudge = 1 + Math.max(-MAX_RATE, Math.min(MAX_RATE, d / 20));
+
+    // "Relaxed" only suppresses seeks for chronic small drift on a client that has
+    // already proved it cannot hold sync. A large jump still gets a seek even while
+    // relaxed, or an operator restart would never reach this screen.
+    var relaxed = Date.now() < relaxedUntil;
+    if (Math.abs(d) <= (relaxed ? RELAX_HARD_S : HARD_S)) { setRate(nudge); return; }
+    if (Date.now() - lastSeekAt < SEEK_COOLDOWN) { setRate(nudge); return; }
+
+    setRate(1);
+    lastSeekAt = Date.now();
+    // three hard seeks inside a minute means this client cannot hold sync at all;
+    // stop fighting it for 5 minutes and let it play a little behind
+    if (Date.now() - seekWindowAt > 60000) { seekWindowAt = Date.now(); seekCount = 0; }
+    if (++seekCount >= 3) relaxedUntil = Date.now() + 300000;
+    vid.currentTime = want;
   }
+
+  // ?diag=1 — everything you need to tell a decode failure from a starved network
+  // from a wrong clock, on the panel itself, without a keyboard or devtools.
+  var diagOn = params.get('diag') === '1';
+  var diagEl = document.getElementById('diag');
+  function renderDiag() {
+    var buf = '-';
+    try {
+      if (vid.buffered.length) {
+        buf = fmt(vid.buffered.start(0)) + ' → ' + fmt(vid.buffered.end(vid.buffered.length - 1));
+      }
+    } catch (e) {}
+    var q = vid.getVideoPlaybackQuality ? vid.getVideoPlaybackQuality() : null;
+    var cfg = currentCfg();
+    diagEl.textContent =
+      'ready/net  ' + vid.readyState + ' / ' + vid.networkState + (vid.seeking ? '  SEEKING' : '') + '\n' +
+      'video      ' + vid.videoWidth + '×' + vid.videoHeight +
+                      '   dur ' + (vid.duration ? fmt(vid.duration) : '-') + '\n' +
+      'position   ' + fmt(vid.currentTime) + (vid.paused ? '  PAUSED' : '') +
+                      '   rate ' + vid.playbackRate.toFixed(2) + '\n' +
+      'buffered   ' + buf + '\n' +
+      'drift      ' + lastDrift.toFixed(2) + 's   seeks ' + seekCount +
+                      (Date.now() < relaxedUntil ? '   SYNC RELAXED' : '') + '\n' +
+      'clock off  ' + (clockOffset / 1000).toFixed(1) + 's\n' +
+      'frames     ' + (q ? q.totalVideoFrames + ' shown / ' + q.droppedVideoFrames + ' dropped' : 'n/a') + '\n' +
+      'state      ' + (cfg ? cfg.mode + (cfg.pausedAt ? ' (hold)' : '') : 'none') +
+                      (gasCfg ? '  [api]' : '  [static]');
+  }
+  if (diagOn) { diagEl.style.display = 'block'; setInterval(renderDiag, 500); renderDiag(); }
 
   if (params.get('sync') !== '0') {
     fetchSync(); fetchCtl();
@@ -316,6 +463,9 @@
     setInterval(fetchCtl, 5000);
     vid.addEventListener('loadedmetadata', applySync);
     setInterval(applySync, 1000);
+  } else {
+    setRate(1);
+    fetchSync();   // still want the server clock for the diag readout
   }
 
   // PIN-gated operator bar (?ctl=1): pause / resume / restart for every client
@@ -334,10 +484,10 @@
     setInterval(function () {
       if (!vid.duration) return;
       var cfg = currentCfg();
-      if (cfg && cfg.mode === 'scheduled' && Date.parse(cfg.start) > Date.now()) {
+      if (cfg && cfg.mode === 'scheduled' && Date.parse(cfg.start) > now()) {
         posSt.textContent = 'COUNTDOWN';
         posEl.classList.add('hold');
-        posTm.textContent = 'starts in ' + fmt((Date.parse(cfg.start) - Date.now()) / 1000);
+        posTm.textContent = 'starts in ' + fmt((Date.parse(cfg.start) - now()) / 1000);
         return;
       }
       posSt.textContent = holdPaused ? 'STANDBY' : 'LIVE';
