@@ -204,6 +204,50 @@
             "vCenter": false,
             "hCenter": false
           }
+        },
+        "7": {
+          "type": "WIDGET",
+          "widgetId": "widget_303",
+          "bbox": {
+            "left": "62.3%",
+            "right": "30.0%",
+            "top": "91.9%",
+            "bottom": "4.0%",
+            "width": "7.7%",
+            "height": "4.1%"
+          },
+          "setting": {
+            "autoProps": {
+              "right": true,
+              "left": false,
+              "top": true,
+              "bottom": false
+            },
+            "vCenter": false,
+            "hCenter": false
+          }
+        },
+        "8": {
+          "type": "WIDGET",
+          "widgetId": "widget_304",
+          "bbox": {
+            "left": "70.4%",
+            "right": "21.9%",
+            "top": "91.9%",
+            "bottom": "4.0%",
+            "width": "7.7%",
+            "height": "4.1%"
+          },
+          "setting": {
+            "autoProps": {
+              "right": true,
+              "left": false,
+              "top": true,
+              "bottom": false
+            },
+            "vCenter": false,
+            "hCenter": false
+          }
         }
       },
       "type": "FIXED",
@@ -212,7 +256,9 @@
         "1",
         "4",
         "5",
-        "6"
+        "6",
+        "7",
+        "8"
       ]
     },
     "layout_6": {
@@ -24092,6 +24138,100 @@
         }
       },
       "id": "widget_293",
+      "useDataSources": []
+    },
+    "widget_303": {
+      "uri": "widgets/common/button/",
+      "version": "1.20.0",
+      "label": "Logistics Dashboard",
+      "config": {
+        "functionConfig": {
+          "text": "Logistics Dashboard",
+          "textExpression": null,
+          "linkParam": {
+            "linkType": "WEB_ADDRESS",
+            "openType": "_blank",
+            "value": "https://whitewaterrescue.github.io/wri-logistics/",
+            "expression": null
+          }
+        },
+        "styleConfig": {
+          "themeStyle": {
+            "quickStyleType": "danger"
+          },
+          "useCustom": true,
+          "customStyle": {
+            "hover": {
+              "enableDynamicStyle": false,
+              "text": {
+                "color": "#c85716"
+              },
+              "background": {
+                "color": "#050505",
+                "fillType": "fill"
+              }
+            },
+            "regular": {
+              "enableDynamicStyle": false,
+              "text": {
+                "color": "var(--dark)"
+              },
+              "background": {
+                "color": "#c85716",
+                "fillType": "fill"
+              }
+            }
+          }
+        }
+      },
+      "id": "widget_303",
+      "useDataSources": []
+    },
+    "widget_304": {
+      "uri": "widgets/common/button/",
+      "version": "1.20.0",
+      "label": "Safety Dashboard",
+      "config": {
+        "functionConfig": {
+          "text": "Safety Dashboard",
+          "textExpression": null,
+          "linkParam": {
+            "linkType": "WEB_ADDRESS",
+            "openType": "_blank",
+            "value": "https://whitewaterrescue.github.io/wri-safety/",
+            "expression": null
+          }
+        },
+        "styleConfig": {
+          "themeStyle": {
+            "quickStyleType": "danger"
+          },
+          "useCustom": true,
+          "customStyle": {
+            "hover": {
+              "enableDynamicStyle": false,
+              "text": {
+                "color": "#c85716"
+              },
+              "background": {
+                "color": "#050505",
+                "fillType": "fill"
+              }
+            },
+            "regular": {
+              "enableDynamicStyle": false,
+              "text": {
+                "color": "var(--dark)"
+              },
+              "background": {
+                "color": "#c85716",
+                "fillType": "fill"
+              }
+            }
+          }
+        }
+      },
+      "id": "widget_304",
       "useDataSources": []
     },
     "widget_295": {
