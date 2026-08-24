@@ -165,8 +165,8 @@
           "type": "WIDGET",
           "widgetId": "widget_283",
           "bbox": {
-            "left": "46.1%",
-            "right": "46.2%",
+            "left": "34.0%",
+            "right": "58.3%",
             "top": "91.9%",
             "bottom": "4.0%",
             "width": "7.7%",
@@ -187,8 +187,8 @@
           "type": "WIDGET",
           "widgetId": "widget_293",
           "bbox": {
-            "left": "54.2%",
-            "right": "38.1%",
+            "left": "42.1%",
+            "right": "50.2%",
             "top": "91.9%",
             "bottom": "4.0%",
             "width": "7.7%",
@@ -209,8 +209,8 @@
           "type": "WIDGET",
           "widgetId": "widget_303",
           "bbox": {
-            "left": "62.3%",
-            "right": "30.0%",
+            "left": "50.2%",
+            "right": "42.1%",
             "top": "91.9%",
             "bottom": "4.0%",
             "width": "7.7%",
@@ -231,8 +231,8 @@
           "type": "WIDGET",
           "widgetId": "widget_304",
           "bbox": {
-            "left": "70.4%",
-            "right": "21.9%",
+            "left": "58.3%",
+            "right": "34.0%",
             "top": "91.9%",
             "bottom": "4.0%",
             "width": "7.7%",
