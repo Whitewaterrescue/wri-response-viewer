@@ -23722,33 +23722,16 @@
       "id": "widget_286"
     },
     "widget_288": {
-      "uri": "widgets/common/image/",
+      "uri": "widgets/common/embed/",
       "version": "1.20.0",
-      "label": "Gateway QR: PIN 2605",
+      "label": "Gateway PIN (live)",
       "config": {
-        "functionConfig": {
-          "altText": "",
-          "toolTip": "",
-          "linkParam": {},
-          "scale": "Fit",
-          "imageParam": {
-            "url": "${appResourceUrl}/images/widget_288/1778602787507.png",
-            "originalUrl": "${appResourceUrl}/images/widget_288/1778602787507.png",
-            "fileName": "1778602787507.png",
-            "originalName": "Untitled design (14).png",
-            "imgSourceType": "BY_UPLOAD",
-            "fileFormat": "image/png",
-            "originalId": "1778602787507",
-            "originalWidth": 2000,
-            "originalHeight": 2000
-          },
-          "imageDisplayQualityMode": "ORIGINAL",
-          "imgSourceType": "",
-          "srcExpression": null
-        },
-        "styleConfig": {}
+        "embedType": "url",
+        "expression": "<p>https://script.google.com/macros/s/AKfycbzcg-yD3_ALkdGYVEOuGY3VR8NrlsPRoxL6k-4LKX3SqEI6NlaKkpprKCtez2xo9C2u/exec?api=gatewayqr</p>",
+        "enableLabel": false
       },
-      "id": "widget_288"
+      "id": "widget_288",
+      "useDataSources": []
     },
     "widget_289": {
       "uri": "widgets/common/button/",
