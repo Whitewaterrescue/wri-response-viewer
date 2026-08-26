@@ -352,6 +352,12 @@
         "26": {
           "type": "WIDGET",
           "widgetId": "widget_302"
+        },
+        "27": {
+          "type": "WIDGET",
+          "widgetId": "widget_305",
+          "bbox": {},
+          "setting": {}
         }
       },
       "type": "FIXED",
@@ -372,7 +378,8 @@
         "23",
         "24",
         "25",
-        "26"
+        "26",
+        "27"
       ]
     },
     "layout_7": {
@@ -7475,6 +7482,10 @@
             "widget_302": {
               "width": 1400,
               "height": 900
+            },
+            "widget_305": {
+              "width": 380,
+              "height": 620
             }
           },
           "arrangement": "floating"
@@ -24355,6 +24366,31 @@
       },
       "id": "widget_302",
       "useDataSources": []
+    },
+    "widget_305": {
+      "id": "widget_305",
+      "uri": "widgets/downgradient/",
+      "version": "1.0.0",
+      "label": "Downgradient",
+      "config": {
+        "radiiM": [
+          5,
+          15,
+          50
+        ],
+        "samplesPerRing": 16,
+        "flatPct": 1,
+        "noiseFactor": 3,
+        "minDemPixelsAcross": 2,
+        "consistentDeg": 15,
+        "scaleDependentDeg": 45,
+        "arrowLengthPx": 78,
+        "units": "imperial",
+        "ditchScaleM": 10
+      },
+      "useMapWidgetIds": [
+        "widget_1"
+      ]
     }
   },
   "widgetsManifest": {},

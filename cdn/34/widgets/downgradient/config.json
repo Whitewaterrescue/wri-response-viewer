@@ -1,0 +1,12 @@
+{
+ "radiiM": [5, 15, 50],
+ "samplesPerRing": 16,
+ "flatPct": 1.0,
+ "noiseFactor": 3,
+ "minDemPixelsAcross": 2,
+ "ditchScaleM": 10,
+ "consistentDeg": 15,
+ "scaleDependentDeg": 45,
+ "arrowLengthPx": 78,
+ "units": "imperial"
+}
