@@ -221,7 +221,12 @@
   var vid = document.getElementById('vid');
   var chip = document.getElementById('soundChip');
 
-  vid.src = params.get('src') || './drill.mp4';
+  // VERSIONED FILENAME, deliberately. The video was 'drill.mp4' for the Aug
+  // test cut; swapping the bytes under the same URL left every phone that had
+  // already scanned the QR playing the OLD video from its own HTTP cache, with
+  // no way for the cache to know. A new name per drill defeats every cache
+  // layer -- browser, CDN edge and any service worker -- at zero cost.
+  vid.src = params.get('src') || './drill-2609duluth.mp4';
   if (params.get('title')) document.getElementById('title').textContent = params.get('title');
 
   // QR points at this page itself. Served as a LOCAL file: this used to be
