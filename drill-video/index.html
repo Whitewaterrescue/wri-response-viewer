@@ -85,6 +85,14 @@
     backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
   }
   #mapBox canvas { display: block; border-radius: 5px; }
+  /* shown while the on-screen feed is an aircraft with no flight track */
+  #mapNote {
+    display: none; margin-top: 6px; padding: 4px 6px; border-radius: 4px;
+    background: rgba(236,35,41,.14); border: 1px solid rgba(236,35,41,.45);
+    font-size: 10px; font-weight: 700; letter-spacing: .3px; color: #ffb3b5;
+  }
+  #mapNote.on { display: block; }
+  #mapLegend span.untracked i { opacity: .35; box-shadow: inset 0 0 0 1px #fff; }
   #mapLegend {
     display: flex; gap: 10px; flex-wrap: wrap;
     margin-top: 6px; font-size: 10px; font-weight: 700; letter-spacing: .3px;
@@ -188,6 +196,7 @@
   <div id="mapBox">
     <canvas id="mapCv"></canvas>
     <div id="mapLegend"></div>
+    <div id="mapNote"></div>
   </div>
   <div id="countdown">
     <div class="lbl">LIVE FEED BEGINS IN</div>
@@ -215,14 +224,23 @@
   vid.src = params.get('src') || './drill.mp4';
   if (params.get('title')) document.getElementById('title').textContent = params.get('title');
 
-  // QR points at this page itself (without transient params)
+  // QR points at this page itself. Served as a LOCAL file: this used to be
+  // fetched live from api.qrserver.com, so a restricted venue network or a slow
+  // third party rendered a broken image and nobody in the room could scan it —
+  // the one moment it has to work. qr.png is generated at build time and its
+  // payload is decode-verified. Falls back to the remote service only if the
+  // local file is missing (an older deploy).
   var qrBox = document.getElementById('qrBox');
   if (params.get('qr') === '0') {
     qrBox.style.display = 'none';
   } else {
-    var pageUrl = location.origin + location.pathname;
-    document.getElementById('qrImg').src =
-      'https://api.qrserver.com/v1/create-qr-code/?size=256x256&margin=1&data=' + encodeURIComponent(pageUrl);
+    var qrImg = document.getElementById('qrImg');
+    qrImg.onerror = function () {
+      qrImg.onerror = null;
+      qrImg.src = 'https://api.qrserver.com/v1/create-qr-code/?size=256x256&margin=1&data=' +
+                  encodeURIComponent(location.origin + location.pathname);
+    };
+    qrImg.src = 'qr.png';
   }
 
   // clock (sells the live feel; updates every second)
@@ -501,7 +519,7 @@
   (function () {
     if (params.get('map') === '0') return;
     var box = document.getElementById('mapBox'), cv = document.getElementById('mapCv'),
-        legend = document.getElementById('mapLegend');
+        legend = document.getElementById('mapLegend'), note = document.getElementById('mapNote');
     var TRK = null, IMG = null, MAXW = 230, W = 0, H = 0, RECENT = 60;
 
     function merc(lat) { return Math.log(Math.tan(Math.PI / 4 + lat * Math.PI / 360)); }
@@ -563,9 +581,25 @@
         else { g.lineWidth = 1.5; g.strokeStyle = d.color; g.globalAlpha = .75; g.stroke(); g.globalAlpha = 1; }
       });
 
+      var actD = null;
+      for (var q = 0; q < TRK.drones.length; q++) {
+        if (TRK.drones[q].id === act) actD = TRK.drones[q];
+      }
       Array.prototype.forEach.call(legend.children, function (el) {
-        el.className = el.getAttribute('data-id') === act ? 'on' : '';
+        var id = el.getAttribute('data-id'), dd = null;
+        for (var q = 0; q < TRK.drones.length; q++) {
+          if (TRK.drones[q].id === id) dd = TRK.drones[q];
+        }
+        el.className = (id === act ? 'on ' : '') + (dd && dd.tracked === false ? 'untracked' : '');
       });
+      // Say it outright when the feed on screen has no flight track, rather
+      // than lighting up a legend entry that has no marker to point at.
+      if (actD && actD.tracked === false) {
+        note.textContent = '⚠ ' + String(actD.label).toUpperCase() + ' — no GPS on this aircraft';
+        note.className = 'on';
+      } else {
+        note.className = '';
+      }
     }
 
     fetch('track.json', { cache: 'no-store' })

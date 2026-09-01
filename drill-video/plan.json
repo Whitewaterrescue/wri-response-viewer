@@ -1,0 +1,194 @@
+{
+ "duration": 1770.184767,
+ "segments": [
+  {
+   "v0": 0.0,
+   "v1": 40.0,
+   "drone": "card1",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card1\\DJI_20260901080726_0001_S.MP4",
+   "clip_offset": 394.0
+  },
+  {
+   "v0": 40.0,
+   "v1": 62.455,
+   "drone": "card3",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card3\\DJI_20260901081437_0002_D.MP4",
+   "clip_offset": 2.603
+  },
+  {
+   "v0": 62.455,
+   "v1": 102.455,
+   "drone": "card1",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card1\\DJI_20260901080726_0001_S.MP4",
+   "clip_offset": 456.455
+  },
+  {
+   "v0": 102.455,
+   "v1": 182.455,
+   "drone": "card3",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card3\\DJI_20260901081504_0003_D.MP4",
+   "clip_offset": 37.396
+  },
+  {
+   "v0": 182.455,
+   "v1": 222.455,
+   "drone": "card1",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card1\\DJI_20260901081641_0004_S.MP4",
+   "clip_offset": 21.455
+  },
+  {
+   "v0": 222.455,
+   "v1": 262.455,
+   "drone": "card3",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card3\\DJI_20260901081504_0003_D.MP4",
+   "clip_offset": 157.396
+  },
+  {
+   "v0": 262.455,
+   "v1": 302.455,
+   "drone": "card1",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card1\\DJI_20260901081641_0004_S.MP4",
+   "clip_offset": 101.455
+  },
+  {
+   "v0": 302.455,
+   "v1": 342.455,
+   "drone": "card3",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card3\\DJI_20260901081504_0003_D.MP4",
+   "clip_offset": 237.396
+  },
+  {
+   "v0": 342.455,
+   "v1": 382.455,
+   "drone": "card1",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card1\\DJI_20260901081641_0004_S.MP4",
+   "clip_offset": 181.455
+  },
+  {
+   "v0": 382.455,
+   "v1": 390.651,
+   "drone": "card3",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card3\\DJI_20260901081504_0003_D.MP4",
+   "clip_offset": 317.396
+  },
+  {
+   "v0": 390.651,
+   "v1": 420.0,
+   "drone": "card1",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card1\\DJI_20260901081641_0004_S.MP4",
+   "clip_offset": 229.651
+  },
+  {
+   "v0": 420.0,
+   "v1": 745.592,
+   "drone": "card3",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card3\\DJI_20260901084503_0008_D.MP4",
+   "clip_offset": 0.0
+  },
+  {
+   "v0": 745.592,
+   "v1": 825.592,
+   "drone": "card3",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card3\\DJI_20260901085029_0009_D.MP4",
+   "clip_offset": 0.001
+  },
+  {
+   "v0": 825.592,
+   "v1": 865.592,
+   "drone": "card2",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card2\\DJI_20260901085133_0002_V.MP4",
+   "clip_offset": 16.321
+  },
+  {
+   "v0": 865.592,
+   "v1": 905.592,
+   "drone": "card3",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card3\\DJI_20260901085029_0009_D.MP4",
+   "clip_offset": 120.001
+  },
+  {
+   "v0": 905.592,
+   "v1": 945.592,
+   "drone": "card2",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card2\\DJI_20260901085133_0002_V.MP4",
+   "clip_offset": 96.321
+  },
+  {
+   "v0": 945.592,
+   "v1": 985.592,
+   "drone": "card3",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card3\\DJI_20260901085029_0009_D.MP4",
+   "clip_offset": 200.001
+  },
+  {
+   "v0": 985.592,
+   "v1": 1025.592,
+   "drone": "card2",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card2\\DJI_20260901085133_0002_V.MP4",
+   "clip_offset": 176.321
+  },
+  {
+   "v0": 1025.592,
+   "v1": 1065.592,
+   "drone": "card3",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card3\\DJI_20260901085029_0009_D.MP4",
+   "clip_offset": 280.001
+  },
+  {
+   "v0": 1065.592,
+   "v1": 1105.592,
+   "drone": "card2",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card2\\DJI_20260901085521_0003_V.MP4",
+   "clip_offset": 27.652
+  },
+  {
+   "v0": 1105.592,
+   "v1": 1145.592,
+   "drone": "card3",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card3\\DJI_20260901085555_0010_D.MP4",
+   "clip_offset": 34.242
+  },
+  {
+   "v0": 1145.592,
+   "v1": 1185.592,
+   "drone": "card2",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card2\\DJI_20260901085521_0003_V.MP4",
+   "clip_offset": 107.652
+  },
+  {
+   "v0": 1185.592,
+   "v1": 1196.171,
+   "drone": "card3",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card3\\DJI_20260901085555_0010_D.MP4",
+   "clip_offset": 114.242
+  },
+  {
+   "v0": 1196.171,
+   "v1": 1425.0,
+   "drone": "card2",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card2\\DJI_20260901092025_0013_V.MP4",
+   "clip_offset": 0.0
+  },
+  {
+   "v0": 1425.0,
+   "v1": 1653.594,
+   "drone": "card2",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card2\\DJI_20260901092414_0014_V.MP4",
+   "clip_offset": 0.068
+  },
+  {
+   "v0": 1653.594,
+   "v1": 1733.594,
+   "drone": "card2",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card2\\DJI_20260901092803_0015_V.MP4",
+   "clip_offset": 0.0
+  },
+  {
+   "v0": 1733.594,
+   "v1": 1770.185,
+   "drone": "card3",
+   "clip": "C:/Users/codywhitewaterrescue/Desktop/2609duluth USA/videos\\card3\\DJI_20260901092845_0012_D.MP4",
+   "clip_offset": 37.642
+  }
+ ]
+}
