@@ -75,6 +75,26 @@
   #qrBox .cap { font-size: 11px; font-weight: 700; margin-top: 5px; letter-spacing: .3px; }
   @media (max-width: 700px) { #qrBox, #fsBtn { display: none; } }
 
+  /* UAS minimap — drone positions from track.json, keyed to the video playhead.
+     Hidden until track.json actually loads, so a set with no telemetry (or an
+     older drill.mp4 with no track) just shows the plain player as before. */
+  #mapBox {
+    position: absolute; bottom: 16px; left: 16px; display: none;
+    background: rgba(20,21,21,.86); border: 1px solid rgba(255,255,255,.16);
+    border-radius: 10px; padding: 8px; box-shadow: 0 4px 16px rgba(0,0,0,.5);
+    backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+  }
+  #mapBox canvas { display: block; border-radius: 5px; }
+  #mapLegend {
+    display: flex; gap: 10px; flex-wrap: wrap;
+    margin-top: 6px; font-size: 10px; font-weight: 700; letter-spacing: .3px;
+  }
+  #mapLegend span { display: flex; align-items: center; gap: 4px; opacity: .45; }
+  #mapLegend span.on { opacity: 1; }
+  #mapLegend i { width: 8px; height: 8px; border-radius: 50%; display: block; }
+  @media (max-width: 700px) { #mapBox { bottom: 10px; left: 10px; transform: scale(.8);
+                                        transform-origin: bottom left; } }
+
   /* scheduled-start countdown */
   #countdown {
     position: absolute; inset: 0; display: none;
@@ -164,6 +184,10 @@
   <div id="qrBox">
     <img id="qrImg" alt="QR — watch on your phone">
     <div class="cap">WATCH ON YOUR PHONE</div>
+  </div>
+  <div id="mapBox">
+    <canvas id="mapCv"></canvas>
+    <div id="mapLegend"></div>
   </div>
   <div id="countdown">
     <div class="lbl">LIVE FEED BEGINS IN</div>
@@ -467,6 +491,112 @@
     setRate(1);
     fetchSync();   // still want the server clock for the diag readout
   }
+
+  /* ── UAS minimap ────────────────────────────────────────────────────────
+     track.json is produced by drill-uas/uas_drill.py from the DJI .SRT
+     sidecars. It is sampled on the SAME meshed timeline as drill.mp4, so the
+     marker is just a lookup on vid.currentTime — it inherits the wall-clock
+     sync, the pause hold and the countdown with no extra plumbing.
+     Entirely optional: any failure leaves the player exactly as it was. */
+  (function () {
+    if (params.get('map') === '0') return;
+    var box = document.getElementById('mapBox'), cv = document.getElementById('mapCv'),
+        legend = document.getElementById('mapLegend');
+    var TRK = null, IMG = null, MAXW = 230, W = 0, H = 0, RECENT = 60;
+
+    function merc(lat) { return Math.log(Math.tan(Math.PI / 4 + lat * Math.PI / 360)); }
+
+    function project(lat, lon) {
+      var b = TRK.bbox, y0 = merc(b[3]), y1 = merc(b[1]);
+      return [(lon - b[0]) / (b[2] - b[0]) * W, (y0 - merc(lat)) / (y0 - y1) * H];
+    }
+
+    function activeDrone(t) {
+      var cur = TRK.segments.length ? TRK.segments[0].drone : null;
+      for (var i = 0; i < TRK.segments.length; i++) {
+        if (TRK.segments[i].t <= t + 0.001) cur = TRK.segments[i].drone; else break;
+      }
+      return cur;
+    }
+
+    function draw() {
+      if (!TRK || !cv.getContext) return;
+      var g = cv.getContext('2d');
+      var t = (vid.duration && isFinite(vid.currentTime)) ? vid.currentTime : 0;
+      var i = Math.max(0, Math.min(Math.round(t * TRK.hz),
+              (TRK.series[TRK.drones[0].id] || []).length - 1));
+      var act = activeDrone(t);
+
+      g.clearRect(0, 0, W, H);
+      if (IMG) g.drawImage(IMG, 0, 0, W, H); else { g.fillStyle = '#1d2020'; g.fillRect(0, 0, W, H); }
+
+      TRK.drones.forEach(function (d) {
+        var pts = TRK.series[d.id] || [], on = d.id === act;
+        // whole flight faint, the last RECENT seconds solid — reads as motion
+        // without the trail growing into an unreadable scribble.
+        [[0, i, .22, 1], [Math.max(0, i - RECENT * TRK.hz), i, on ? .95 : .4, on ? 2 : 1.2]]
+          .forEach(function (seg) {
+            g.beginPath(); g.strokeStyle = d.color; g.globalAlpha = seg[2];
+            g.lineWidth = seg[3]; g.lineJoin = 'round';
+            var started = false;
+            for (var k = seg[0]; k <= seg[1]; k++) {
+              var p = pts[k];
+              if (!p) { started = false; continue; }
+              var xy = project(p[0], p[1]);
+              if (started) g.lineTo(xy[0], xy[1]); else { g.moveTo(xy[0], xy[1]); started = true; }
+            }
+            g.stroke();
+          });
+
+        var cur = pts[i];
+        if (!cur) return;
+        var xy = project(cur[0], cur[1]);
+        g.globalAlpha = 1;
+        if (on && cur[3] !== null && cur[3] !== undefined) {   // heading wedge
+          var a = (cur[3] - 90) * Math.PI / 180, spread = 0.42;
+          g.beginPath(); g.moveTo(xy[0], xy[1]);
+          g.arc(xy[0], xy[1], 22, a - spread, a + spread); g.closePath();
+          g.fillStyle = d.color; g.globalAlpha = .22; g.fill(); g.globalAlpha = 1;
+        }
+        g.beginPath(); g.arc(xy[0], xy[1], on ? 6 : 4, 0, 6.284);
+        if (on) { g.fillStyle = d.color; g.fill(); g.lineWidth = 2; g.strokeStyle = '#fff'; g.stroke(); }
+        else { g.lineWidth = 1.5; g.strokeStyle = d.color; g.globalAlpha = .75; g.stroke(); g.globalAlpha = 1; }
+      });
+
+      Array.prototype.forEach.call(legend.children, function (el) {
+        el.className = el.getAttribute('data-id') === act ? 'on' : '';
+      });
+    }
+
+    fetch('track.json', { cache: 'no-store' })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) {
+        if (!j || !j.drones || !j.drones.length) return;
+        TRK = j;
+        var b = j.bbox, latm = (b[1] + b[3]) / 2 * Math.PI / 180;
+        var ar = ((b[2] - b[0]) * Math.cos(latm)) / Math.max(b[3] - b[1], 1e-9);
+        W = MAXW; H = Math.round(MAXW / Math.max(ar, 0.35));
+        if (H > 240) { H = 240; W = Math.round(240 * ar); }
+        var dpr = window.devicePixelRatio || 1;
+        cv.width = W * dpr; cv.height = H * dpr;
+        cv.style.width = W + 'px'; cv.style.height = H + 'px';
+        cv.getContext('2d').scale(dpr, dpr);
+        legend.innerHTML = j.drones.map(function (d) {
+          return '<span data-id="' + d.id + '"><i style="background:' + d.color + '"></i>' +
+                 String(d.label).toUpperCase() + '</span>';
+        }).join('');
+        box.style.display = 'block';
+        if (j.basemap) {
+          IMG = new Image();
+          IMG.onload = draw;
+          IMG.onerror = function () { IMG = null; };   // plain field, still usable
+          IMG.src = j.basemap;
+        }
+        draw();
+        setInterval(draw, 250);
+      })
+      .catch(function () {});   // no track => no minimap, player unaffected
+  })();
 
   // PIN-gated operator bar (?ctl=1): pause / resume / restart for every client
   if (params.get('ctl') === '1') {
