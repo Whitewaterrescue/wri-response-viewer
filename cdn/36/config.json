@@ -345,10 +345,6 @@
           "bbox": {},
           "setting": {}
         },
-        "25": {
-          "type": "WIDGET",
-          "widgetId": "widget_301"
-        },
         "26": {
           "type": "WIDGET",
           "widgetId": "widget_302"
@@ -378,7 +374,6 @@
         "21",
         "23",
         "24",
-        "25",
         "26"
       ]
     },
@@ -24342,18 +24337,6 @@
       "useMapWidgetIds": [
         "widget_233"
       ]
-    },
-    "widget_301": {
-      "uri": "widgets/common/embed/",
-      "version": "1.20.0",
-      "label": "Drill Video",
-      "config": {
-        "embedType": "url",
-        "expression": "<p>https://whitewaterrescue.github.io/wri-response-viewer/drill-video/</p>",
-        "enableLabel": false
-      },
-      "id": "widget_301",
-      "useDataSources": []
     },
     "widget_302": {
       "uri": "widgets/common/embed/",
