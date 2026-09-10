@@ -301,7 +301,7 @@
         },
         "10": {
           "type": "WIDGET",
-          "widgetId": "widget_307"
+          "widgetId": "widget_306"
         },
         "16": {
           "type": "WIDGET",
@@ -4621,6 +4621,10 @@
           "bbox": {},
           "setting": {}
         },
+        "10": {
+          "type": "WIDGET",
+          "widgetId": "widget_307"
+        },
         "11": {
           "type": "WIDGET",
           "widgetId": "widget_299",
@@ -4634,7 +4638,8 @@
         "5",
         "6",
         "9",
-        "11"
+        "11",
+        "10"
       ]
     },
     "layout_73": {
@@ -14559,6 +14564,10 @@
             "widget_299": {
               "width": 340,
               "height": 460
+            },
+            "widget_307": {
+              "width": 430,
+              "height": 720
             }
           },
           "arrangement": "floating"
