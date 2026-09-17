@@ -1499,10 +1499,36 @@
             "vCenter": false,
             "hCenter": false
           }
+        },
+        "1": {
+          "type": "WIDGET",
+          "widgetId": "widget_308",
+          "bbox": {
+            "left": "0px",
+            "right": "0px",
+            "top": "0px",
+            "bottom": "0px",
+            "width": "1px",
+            "height": "1px"
+          },
+          "setting": {
+            "autoProps": {
+              "left": true,
+              "right": false,
+              "top": true,
+              "bottom": false,
+              "width": "CUSTOM",
+              "height": "CUSTOM"
+            },
+            "vCenter": false,
+            "hCenter": false
+          },
+          "isPending": false
         }
       },
       "order": [
-        "0"
+        "0",
+        "1"
       ]
     },
     "layout_34": {
@@ -2379,12 +2405,38 @@
               "bottom": true
             }
           }
+        },
+        "1": {
+          "type": "WIDGET",
+          "widgetId": "widget_308",
+          "bbox": {
+            "left": "0px",
+            "right": "0px",
+            "top": "0px",
+            "bottom": "0px",
+            "width": "1px",
+            "height": "1px"
+          },
+          "setting": {
+            "autoProps": {
+              "left": true,
+              "right": false,
+              "top": true,
+              "bottom": false,
+              "width": "CUSTOM",
+              "height": "CUSTOM"
+            },
+            "vCenter": false,
+            "hCenter": false
+          },
+          "isPending": false
         }
       },
       "type": "FIXED",
       "label": "Second",
       "order": [
-        "0"
+        "0",
+        "1"
       ]
     },
     "layout_43": {
@@ -2849,12 +2901,38 @@
             "vCenter": false,
             "hCenter": false
           }
+        },
+        "1": {
+          "type": "WIDGET",
+          "widgetId": "widget_308",
+          "bbox": {
+            "left": "0px",
+            "right": "0px",
+            "top": "0px",
+            "bottom": "0px",
+            "width": "1px",
+            "height": "1px"
+          },
+          "setting": {
+            "autoProps": {
+              "left": true,
+              "right": false,
+              "top": true,
+              "bottom": false,
+              "width": "CUSTOM",
+              "height": "CUSTOM"
+            },
+            "vCenter": false,
+            "hCenter": false
+          },
+          "isPending": false
         }
       },
       "type": "FIXED",
       "label": "Second",
       "order": [
-        "0"
+        "0",
+        "1"
       ]
     },
     "layout_53": {
@@ -3190,12 +3268,38 @@
             "vCenter": false,
             "hCenter": false
           }
+        },
+        "1": {
+          "type": "WIDGET",
+          "widgetId": "widget_309",
+          "bbox": {
+            "left": "0px",
+            "right": "0px",
+            "top": "0px",
+            "bottom": "0px",
+            "width": "1px",
+            "height": "1px"
+          },
+          "setting": {
+            "autoProps": {
+              "left": true,
+              "right": false,
+              "top": true,
+              "bottom": false,
+              "width": "CUSTOM",
+              "height": "CUSTOM"
+            },
+            "vCenter": false,
+            "hCenter": false
+          },
+          "isPending": false
         }
       },
       "type": "FIXED",
       "label": "Second",
       "order": [
-        "0"
+        "0",
+        "1"
       ]
     },
     "layout_56": {
@@ -3347,10 +3451,36 @@
             "vCenter": false,
             "hCenter": false
           }
+        },
+        "1": {
+          "type": "WIDGET",
+          "widgetId": "widget_309",
+          "bbox": {
+            "left": "0px",
+            "right": "0px",
+            "top": "0px",
+            "bottom": "0px",
+            "width": "1px",
+            "height": "1px"
+          },
+          "setting": {
+            "autoProps": {
+              "left": true,
+              "right": false,
+              "top": true,
+              "bottom": false,
+              "width": "CUSTOM",
+              "height": "CUSTOM"
+            },
+            "vCenter": false,
+            "hCenter": false
+          },
+          "isPending": false
         }
       },
       "order": [
-        "0"
+        "0",
+        "1"
       ]
     },
     "layout_59": {
@@ -4131,12 +4261,38 @@
               "bottom": true
             }
           }
+        },
+        "1": {
+          "type": "WIDGET",
+          "widgetId": "widget_309",
+          "bbox": {
+            "left": "0px",
+            "right": "0px",
+            "top": "0px",
+            "bottom": "0px",
+            "width": "1px",
+            "height": "1px"
+          },
+          "setting": {
+            "autoProps": {
+              "left": true,
+              "right": false,
+              "top": true,
+              "bottom": false,
+              "width": "CUSTOM",
+              "height": "CUSTOM"
+            },
+            "vCenter": false,
+            "hCenter": false
+          },
+          "isPending": false
         }
       },
       "type": "FIXED",
       "label": "Second",
       "order": [
-        "0"
+        "0",
+        "1"
       ]
     },
     "layout_66": {
@@ -4539,12 +4695,38 @@
               "bottom": false
             }
           }
+        },
+        "1": {
+          "type": "WIDGET",
+          "widgetId": "widget_310",
+          "bbox": {
+            "left": "0px",
+            "right": "0px",
+            "top": "0px",
+            "bottom": "0px",
+            "width": "1px",
+            "height": "1px"
+          },
+          "setting": {
+            "autoProps": {
+              "left": true,
+              "right": false,
+              "top": true,
+              "bottom": false,
+              "width": "CUSTOM",
+              "height": "CUSTOM"
+            },
+            "vCenter": false,
+            "hCenter": false
+          },
+          "isPending": false
         }
       },
       "type": "FIXED",
       "label": "Second",
       "order": [
-        "0"
+        "0",
+        "1"
       ]
     },
     "layout_71": {
@@ -4666,10 +4848,36 @@
             "vCenter": false,
             "hCenter": false
           }
+        },
+        "1": {
+          "type": "WIDGET",
+          "widgetId": "widget_310",
+          "bbox": {
+            "left": "0px",
+            "right": "0px",
+            "top": "0px",
+            "bottom": "0px",
+            "width": "1px",
+            "height": "1px"
+          },
+          "setting": {
+            "autoProps": {
+              "left": true,
+              "right": false,
+              "top": true,
+              "bottom": false,
+              "width": "CUSTOM",
+              "height": "CUSTOM"
+            },
+            "vCenter": false,
+            "hCenter": false
+          },
+          "isPending": false
         }
       },
       "order": [
-        "0"
+        "0",
+        "1"
       ]
     },
     "layout_74": {
@@ -5450,12 +5658,38 @@
               "bottom": true
             }
           }
+        },
+        "1": {
+          "type": "WIDGET",
+          "widgetId": "widget_310",
+          "bbox": {
+            "left": "0px",
+            "right": "0px",
+            "top": "0px",
+            "bottom": "0px",
+            "width": "1px",
+            "height": "1px"
+          },
+          "setting": {
+            "autoProps": {
+              "left": true,
+              "right": false,
+              "top": true,
+              "bottom": false,
+              "width": "CUSTOM",
+              "height": "CUSTOM"
+            },
+            "vCenter": false,
+            "hCenter": false
+          },
+          "isPending": false
         }
       },
       "type": "FIXED",
       "label": "Second",
       "order": [
-        "0"
+        "0",
+        "1"
       ]
     },
     "layout_81": {
@@ -5860,12 +6094,38 @@
             "vCenter": false,
             "hCenter": false
           }
+        },
+        "1": {
+          "type": "WIDGET",
+          "widgetId": "widget_311",
+          "bbox": {
+            "left": "0px",
+            "right": "0px",
+            "top": "0px",
+            "bottom": "0px",
+            "width": "1px",
+            "height": "1px"
+          },
+          "setting": {
+            "autoProps": {
+              "left": true,
+              "right": false,
+              "top": true,
+              "bottom": false,
+              "width": "CUSTOM",
+              "height": "CUSTOM"
+            },
+            "vCenter": false,
+            "hCenter": false
+          },
+          "isPending": false
         }
       },
       "type": "FIXED",
       "label": "Second",
       "order": [
-        "0"
+        "0",
+        "1"
       ]
     },
     "layout_86": {
@@ -6026,10 +6286,36 @@
             "vCenter": false,
             "hCenter": false
           }
+        },
+        "1": {
+          "type": "WIDGET",
+          "widgetId": "widget_311",
+          "bbox": {
+            "left": "0px",
+            "right": "0px",
+            "top": "0px",
+            "bottom": "0px",
+            "width": "1px",
+            "height": "1px"
+          },
+          "setting": {
+            "autoProps": {
+              "left": true,
+              "right": false,
+              "top": true,
+              "bottom": false,
+              "width": "CUSTOM",
+              "height": "CUSTOM"
+            },
+            "vCenter": false,
+            "hCenter": false
+          },
+          "isPending": false
         }
       },
       "order": [
-        "0"
+        "0",
+        "1"
       ]
     },
     "layout_89": {
@@ -6810,12 +7096,38 @@
               "bottom": true
             }
           }
+        },
+        "1": {
+          "type": "WIDGET",
+          "widgetId": "widget_311",
+          "bbox": {
+            "left": "0px",
+            "right": "0px",
+            "top": "0px",
+            "bottom": "0px",
+            "width": "1px",
+            "height": "1px"
+          },
+          "setting": {
+            "autoProps": {
+              "left": true,
+              "right": false,
+              "top": true,
+              "bottom": false,
+              "width": "CUSTOM",
+              "height": "CUSTOM"
+            },
+            "vCenter": false,
+            "hCenter": false
+          },
+          "isPending": false
         }
       },
       "type": "FIXED",
       "label": "Second",
       "order": [
-        "0"
+        "0",
+        "1"
       ]
     },
     "layout_96": {
@@ -22799,6 +23111,54 @@
       "id": "widget_307",
       "useMapWidgetIds": [
         "widget_192"
+      ]
+    },
+    "widget_308": {
+      "id": "widget_308",
+      "uri": "widgets/wri-map-guard/",
+      "version": "1.0.0",
+      "label": "Map Guard",
+      "config": {
+        "releaseOnHide": false
+      },
+      "useMapWidgetIds": [
+        "widget_1"
+      ]
+    },
+    "widget_309": {
+      "id": "widget_309",
+      "uri": "widgets/wri-map-guard/",
+      "version": "1.0.0",
+      "label": "Map Guard",
+      "config": {
+        "releaseOnHide": false
+      },
+      "useMapWidgetIds": [
+        "widget_152"
+      ]
+    },
+    "widget_310": {
+      "id": "widget_310",
+      "uri": "widgets/wri-map-guard/",
+      "version": "1.0.0",
+      "label": "Map Guard",
+      "config": {
+        "releaseOnHide": false
+      },
+      "useMapWidgetIds": [
+        "widget_192"
+      ]
+    },
+    "widget_311": {
+      "id": "widget_311",
+      "uri": "widgets/wri-map-guard/",
+      "version": "1.0.0",
+      "label": "Map Guard",
+      "config": {
+        "releaseOnHide": false
+      },
+      "useMapWidgetIds": [
+        "widget_233"
       ]
     }
   },
