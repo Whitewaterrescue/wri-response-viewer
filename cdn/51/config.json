@@ -22726,7 +22726,9 @@
           "excludeOrgs": [
             "BNSF"
           ]
-        }
+        },
+        "rmEndpoint": "https://script.google.com/macros/s/AKfycbzsxpfqbV7di4yTHRiTr7bg-RwojLuesrLhPoaFVM8foedbzhxMMyC-lPcBPPyLtjtm/exec",
+        "opsEndpoint": "https://script.google.com/macros/s/AKfycbytFBip-cbr-ohGpVGFoFBQ3spMLCswlbP26B4Syw0rrDs_x2hO4FqpdFzR6Mb3h9Ke/exec"
       },
       "id": "widget_290",
       "useMapWidgetIds": [
@@ -23081,7 +23083,8 @@
         ],
         "speedMph": 35,
         "maxResults": 200,
-        "detourFactor": 1.3
+        "detourFactor": 1.3,
+        "rmEndpoint": "https://script.google.com/macros/s/AKfycbzsxpfqbV7di4yTHRiTr7bg-RwojLuesrLhPoaFVM8foedbzhxMMyC-lPcBPPyLtjtm/exec"
       },
       "id": "widget_306",
       "useMapWidgetIds": [
@@ -23106,7 +23109,8 @@
         ],
         "speedMph": 35,
         "maxResults": 200,
-        "detourFactor": 1.3
+        "detourFactor": 1.3,
+        "rmEndpoint": "https://script.google.com/macros/s/AKfycbzsxpfqbV7di4yTHRiTr7bg-RwojLuesrLhPoaFVM8foedbzhxMMyC-lPcBPPyLtjtm/exec"
       },
       "id": "widget_307",
       "useMapWidgetIds": [
