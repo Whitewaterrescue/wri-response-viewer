@@ -1524,11 +1524,36 @@
             "hCenter": false
           },
           "isPending": false
+        },
+        "2": {
+          "type": "WIDGET",
+          "widgetId": "widget_312",
+          "bbox": {
+            "left": "0px",
+            "right": "0px",
+            "top": "0px",
+            "bottom": "0px",
+            "width": "1px",
+            "height": "1px"
+          },
+          "setting": {
+            "autoProps": {
+              "left": true,
+              "right": false,
+              "top": true,
+              "bottom": false,
+              "width": "CUSTOM",
+              "height": "CUSTOM"
+            },
+            "vCenter": false,
+            "hCenter": false
+          }
         }
       },
       "order": [
         "0",
-        "1"
+        "1",
+        "2"
       ]
     },
     "layout_34": {
@@ -2430,13 +2455,38 @@
             "hCenter": false
           },
           "isPending": false
+        },
+        "2": {
+          "type": "WIDGET",
+          "widgetId": "widget_312",
+          "bbox": {
+            "left": "0px",
+            "right": "0px",
+            "top": "0px",
+            "bottom": "0px",
+            "width": "1px",
+            "height": "1px"
+          },
+          "setting": {
+            "autoProps": {
+              "left": true,
+              "right": false,
+              "top": true,
+              "bottom": false,
+              "width": "CUSTOM",
+              "height": "CUSTOM"
+            },
+            "vCenter": false,
+            "hCenter": false
+          }
         }
       },
       "type": "FIXED",
       "label": "Second",
       "order": [
         "0",
-        "1"
+        "1",
+        "2"
       ]
     },
     "layout_43": {
@@ -2926,13 +2976,38 @@
             "hCenter": false
           },
           "isPending": false
+        },
+        "2": {
+          "type": "WIDGET",
+          "widgetId": "widget_312",
+          "bbox": {
+            "left": "0px",
+            "right": "0px",
+            "top": "0px",
+            "bottom": "0px",
+            "width": "1px",
+            "height": "1px"
+          },
+          "setting": {
+            "autoProps": {
+              "left": true,
+              "right": false,
+              "top": true,
+              "bottom": false,
+              "width": "CUSTOM",
+              "height": "CUSTOM"
+            },
+            "vCenter": false,
+            "hCenter": false
+          }
         }
       },
       "type": "FIXED",
       "label": "Second",
       "order": [
         "0",
-        "1"
+        "1",
+        "2"
       ]
     },
     "layout_53": {
@@ -23163,6 +23238,24 @@
       },
       "useMapWidgetIds": [
         "widget_233"
+      ]
+    },
+    "widget_312": {
+      "id": "widget_312",
+      "uri": "widgets/incident-scope/",
+      "version": "1.0.0",
+      "label": "Incident Picker",
+      "config": {
+        "incidentsUrl": "https://services6.arcgis.com/Ji79lWGR5B33LhY7/arcgis/rest/services/WRI_Incident_Ops_field_view/FeatureServer/0",
+        "clientFilter": "bnsf",
+        "packs": {},
+        "position": "top-right",
+        "offsetTop": 46,
+        "phonePosition": "bottom-left",
+        "zoomScale": 72000
+      },
+      "useMapWidgetIds": [
+        "widget_1"
       ]
     }
   },
