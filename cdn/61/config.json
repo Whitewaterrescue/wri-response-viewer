@@ -352,6 +352,12 @@
           "widgetId": "widget_305",
           "bbox": {},
           "setting": {}
+        },
+        "28": {
+          "type": "WIDGET",
+          "widgetId": "widget_313",
+          "bbox": {},
+          "setting": {}
         }
       },
       "type": "FIXED",
@@ -372,7 +378,8 @@
         "23",
         "24",
         "26",
-        "10"
+        "10",
+        "28"
       ]
     },
     "layout_7": {
@@ -7868,6 +7875,10 @@
             "widget_306": {
               "width": 430,
               "height": 720
+            },
+            "widget_313": {
+              "width": 1120,
+              "height": 700
             }
           },
           "arrangement": "floating"
@@ -23257,6 +23268,18 @@
       "useMapWidgetIds": [
         "widget_1"
       ]
+    },
+    "widget_313": {
+      "uri": "widgets/common/embed/",
+      "version": "1.20.0",
+      "label": "Drone Video",
+      "config": {
+        "embedType": "url",
+        "expression": "<p>https://whitewaterrescue.github.io/wri-field-app/panels/drone-live/</p>",
+        "enableLabel": false
+      },
+      "id": "widget_313",
+      "useDataSources": []
     }
   },
   "widgetsManifest": {},
