@@ -23263,7 +23263,8 @@
         "position": "top-right",
         "offsetTop": 46,
         "phonePosition": "bottom-left",
-        "zoomScale": 72000
+        "zoomScale": 72000,
+        "keyPlaces": true
       },
       "useMapWidgetIds": [
         "widget_1"
