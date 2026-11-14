@@ -23264,7 +23264,8 @@
         "offsetTop": 46,
         "phonePosition": "bottom-left",
         "zoomScale": 72000,
-        "keyPlaces": true
+        "keyPlaces": true,
+        "resourceBar": true
       },
       "useMapWidgetIds": [
         "widget_1"
