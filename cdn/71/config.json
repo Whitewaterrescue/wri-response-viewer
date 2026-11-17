@@ -165,11 +165,11 @@
           "type": "WIDGET",
           "widgetId": "widget_283",
           "bbox": {
-            "left": "34.0%",
-            "right": "58.3%",
+            "left": "25.7%",
+            "right": "64.9%",
             "top": "91.9%",
-            "bottom": "4.0%",
-            "width": "7.7%",
+            "bottom": "4%",
+            "width": "9.4%",
             "height": "4.1%"
           },
           "setting": {
@@ -187,11 +187,11 @@
           "type": "WIDGET",
           "widgetId": "widget_293",
           "bbox": {
-            "left": "42.1%",
-            "right": "50.2%",
+            "left": "35.5%",
+            "right": "55.1%",
             "top": "91.9%",
-            "bottom": "4.0%",
-            "width": "7.7%",
+            "bottom": "4%",
+            "width": "9.4%",
             "height": "4.1%"
           },
           "setting": {
@@ -209,11 +209,11 @@
           "type": "WIDGET",
           "widgetId": "widget_303",
           "bbox": {
-            "left": "50.2%",
-            "right": "42.1%",
+            "left": "55.1%",
+            "right": "35.5%",
             "top": "91.9%",
-            "bottom": "4.0%",
-            "width": "7.7%",
+            "bottom": "4%",
+            "width": "9.4%",
             "height": "4.1%"
           },
           "setting": {
@@ -231,11 +231,33 @@
           "type": "WIDGET",
           "widgetId": "widget_304",
           "bbox": {
-            "left": "58.3%",
-            "right": "34.0%",
+            "left": "64.9%",
+            "right": "25.7%",
             "top": "91.9%",
-            "bottom": "4.0%",
-            "width": "7.7%",
+            "bottom": "4%",
+            "width": "9.4%",
+            "height": "4.1%"
+          },
+          "setting": {
+            "autoProps": {
+              "right": true,
+              "left": false,
+              "top": true,
+              "bottom": false
+            },
+            "vCenter": false,
+            "hCenter": false
+          }
+        },
+        "9": {
+          "type": "WIDGET",
+          "widgetId": "widget_314",
+          "bbox": {
+            "left": "45.3%",
+            "right": "45.3%",
+            "top": "91.9%",
+            "bottom": "4%",
+            "width": "9.4%",
             "height": "4.1%"
           },
           "setting": {
@@ -258,7 +280,8 @@
         "5",
         "6",
         "7",
-        "8"
+        "8",
+        "9"
       ]
     },
     "layout_6": {
@@ -22444,7 +22467,8 @@
             "hover": {
               "enableDynamicStyle": false,
               "text": {
-                "color": "#c85716"
+                "color": "#c85716",
+                "size": "12px"
               },
               "background": {
                 "color": "#050505",
@@ -22454,7 +22478,8 @@
             "regular": {
               "enableDynamicStyle": false,
               "text": {
-                "color": "var(--dark)"
+                "color": "var(--dark)",
+                "size": "12px"
               },
               "background": {
                 "color": "#c85716",
@@ -22832,7 +22857,8 @@
             "hover": {
               "enableDynamicStyle": false,
               "text": {
-                "color": "#c85716"
+                "color": "#c85716",
+                "size": "12px"
               },
               "background": {
                 "color": "#050505",
@@ -22842,7 +22868,8 @@
             "regular": {
               "enableDynamicStyle": false,
               "text": {
-                "color": "var(--dark)"
+                "color": "var(--dark)",
+                "size": "12px"
               },
               "background": {
                 "color": "#c85716",
@@ -22879,7 +22906,8 @@
             "hover": {
               "enableDynamicStyle": false,
               "text": {
-                "color": "#c85716"
+                "color": "#c85716",
+                "size": "12px"
               },
               "background": {
                 "color": "#050505",
@@ -22889,7 +22917,8 @@
             "regular": {
               "enableDynamicStyle": false,
               "text": {
-                "color": "var(--dark)"
+                "color": "var(--dark)",
+                "size": "12px"
               },
               "background": {
                 "color": "#c85716",
@@ -22926,7 +22955,8 @@
             "hover": {
               "enableDynamicStyle": false,
               "text": {
-                "color": "#c85716"
+                "color": "#c85716",
+                "size": "12px"
               },
               "background": {
                 "color": "#050505",
@@ -22936,7 +22966,8 @@
             "regular": {
               "enableDynamicStyle": false,
               "text": {
-                "color": "var(--dark)"
+                "color": "var(--dark)",
+                "size": "12px"
               },
               "background": {
                 "color": "#c85716",
@@ -23214,6 +23245,55 @@
         "enableLabel": false
       },
       "id": "widget_313",
+      "useDataSources": []
+    },
+    "widget_314": {
+      "uri": "widgets/common/button/",
+      "version": "1.20.0",
+      "label": "Planning Dashboard",
+      "config": {
+        "functionConfig": {
+          "text": "Planning Dashboard",
+          "textExpression": null,
+          "linkParam": {
+            "linkType": "WEB_ADDRESS",
+            "openType": "_blank",
+            "value": "https://script.google.com/macros/s/AKfycbx1GJXj2PUZFP9--SjS0mPaMAqBj92FBTpYl86a1pD9KFeAXjBwbklFJP6G-6If0VexNg/exec",
+            "expression": null
+          }
+        },
+        "styleConfig": {
+          "themeStyle": {
+            "quickStyleType": "danger"
+          },
+          "useCustom": true,
+          "customStyle": {
+            "hover": {
+              "enableDynamicStyle": false,
+              "text": {
+                "color": "#c85716",
+                "size": "12px"
+              },
+              "background": {
+                "color": "#050505",
+                "fillType": "fill"
+              }
+            },
+            "regular": {
+              "enableDynamicStyle": false,
+              "text": {
+                "color": "var(--dark)",
+                "size": "12px"
+              },
+              "background": {
+                "color": "#c85716",
+                "fillType": "fill"
+              }
+            }
+          }
+        }
+      },
+      "id": "widget_314",
       "useDataSources": []
     }
   },
