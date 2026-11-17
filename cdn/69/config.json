@@ -303,18 +303,6 @@
           "type": "WIDGET",
           "widgetId": "widget_306"
         },
-        "16": {
-          "type": "WIDGET",
-          "widgetId": "widget_285",
-          "bbox": {},
-          "setting": {}
-        },
-        "17": {
-          "type": "WIDGET",
-          "widgetId": "widget_286",
-          "bbox": {},
-          "setting": {}
-        },
         "19": {
           "type": "WIDGET",
           "widgetId": "widget_288",
@@ -370,8 +358,6 @@
         "8",
         "9",
         "27",
-        "16",
-        "17",
         "19",
         "20",
         "21",
@@ -7843,10 +7829,6 @@
             "widget_284": {
               "width": 939,
               "height": 616
-            },
-            "widget_286": {
-              "width": 403,
-              "height": 362
             },
             "widget_287": {
               "width": 614,
@@ -22484,55 +22466,6 @@
       },
       "id": "widget_283",
       "useDataSources": []
-    },
-    "widget_285": {
-      "uri": "widgets/common/embed/",
-      "version": "1.20.0",
-      "label": "Live Stream",
-      "config": {
-        "embedType": "url",
-        "expression": "<p>https://app.mapnova.com/live?workspaceId=c9c97b46-4d56-4869-89ed-fba4ed6467de</p>",
-        "enableLabel": false,
-        "honorThemeFont": false
-      },
-      "id": "widget_285",
-      "useDataSources": []
-    },
-    "widget_286": {
-      "uri": "widgets/common/image/",
-      "version": "1.20.0",
-      "label": "Live Stream QR",
-      "config": {
-        "functionConfig": {
-          "altText": "",
-          "toolTip": "",
-          "linkParam": {},
-          "scale": "Fit",
-          "imageParam": {
-            "url": "${appResourceUrl}/images/widget_286/1777478017385.png",
-            "originalUrl": "${appResourceUrl}/images/widget_286/1777478017385.png",
-            "fileName": "1777478017385.png",
-            "originalName": "Screen Shot 2026-04-29 at 09.52.38.png",
-            "imgSourceType": "BY_UPLOAD",
-            "fileFormat": "image/png",
-            "originalId": "1777478017385",
-            "originalWidth": 242,
-            "originalHeight": 238,
-            "cropParam": {
-              "svgViewBox": "0 0 16 16",
-              "svgPath": "M0 0h16v16H0z",
-              "cropShape": "square"
-            }
-          },
-          "imageDisplayQualityMode": "ORIGINAL",
-          "imgSourceType": "",
-          "srcExpression": null,
-          "imageViewer": false,
-          "imageFillMode": "FIT"
-        },
-        "styleConfig": {}
-      },
-      "id": "widget_286"
     },
     "widget_288": {
       "uri": "widgets/common/embed/",
